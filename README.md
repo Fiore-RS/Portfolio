@@ -11,12 +11,19 @@ npm run dev
 
 ## Structure
 
-- `src/data/projects.ts` — all project content lives here. Seeded with Heleani and
-  Reading Journal; two placeholder Graphic Design entries are marked "Project Title" —
-  replace those with real work or delete them.
+- `src/pages/Home.tsx` — the whole one-page scroll: Hero, Selected Work, Craft &
+  Tools, Experience, Let's Connect. Nav links in the header scroll to `#work`,
+  `#about`, and `#contact` on this page rather than routing elsewhere.
+- `src/pages/AllProjects.tsx` (`/work`) and `src/pages/ProjectDetail.tsx`
+  (`/work/:slug`) are the only separate pages/routes.
+- `src/components/ScrollToHash.tsx` — makes the header's `/#work`-style links
+  smooth-scroll to the right section, even when navigating there from a
+  project detail page.
+- `src/data/projects.ts` — all project content lives here. Seeded with Reading
+  Journal; three placeholder entries are marked "Project Title" — replace
+  those as you add more projects you want to showcase.
 - `src/components/ProjectCard.tsx` — the card used on Home and All Projects.
 - `src/components/CategoryFilter.tsx` — the pill toggle for Graphic Design / UX/UI Design.
-- `src/pages/` — Home, AllProjects (`/work`), ProjectDetail (`/work/:slug`), About, Contact.
 
 ## Improvements applied from the Figma review
 
@@ -45,7 +52,7 @@ This project is already configured for a repo named **Portfolio**:
 - `vite.config.ts` → `base: '/Portfolio/'`
 - `src/main.tsx` → `<BrowserRouter basename="/Portfolio">`
 - `public/404.html` + the inline script in `index.html` → the same SPA redirect
-  trick you used on Reading Journal, so refreshing `/work/heleani-animal-health`
+  trick you used on Reading Journal, so refreshing `/work/reading-journal`
   doesn't 404.
 - `.github/workflows/deploy.yml` → builds and publishes `dist/` to GitHub Pages
   automatically on every push to `main`.

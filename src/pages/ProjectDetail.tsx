@@ -58,18 +58,13 @@ export default function ProjectDetail() {
       </section>
 
       {/* Gallery */}
-      <section className="mx-auto max-w-6xl px-6 py-8">
+      <section className="mx-auto max-w-6xl px-6 py-16">
         <h2 className="text-3xl font-bold">
           A Close <span className="text-accent-500">Look.</span>
         </h2>
         <div className="mt-8 grid gap-5 sm:grid-cols-2">
           {project.gallery.map((item, i) => (
-            <div
-              key={i}
-              className={`aspect-[4/3] rounded-3xl ${item.color} ${i === 0 ? 'sm:row-span-2 sm:aspect-auto' : ''}`}
-              role="img"
-              aria-label={item.alt}
-            >
+            <div key={i} className={`aspect-[4/3] rounded-3xl ${item.color}`} role="img" aria-label={item.alt}>
               {item.image && (
                 <img src={item.image} alt={item.alt} className="h-full w-full rounded-3xl object-cover" />
               )}
@@ -84,7 +79,7 @@ export default function ProjectDetail() {
           <h2 className="text-3xl font-bold">
             Project <span className="text-accent-500">Summary.</span>
           </h2>
-          <p className="mt-4 max-w-3xl text-body">{project.summary}</p>
+          <p className="mt-4 max-w-none text-body">{project.summary}</p>
         </div>
       </section>
 

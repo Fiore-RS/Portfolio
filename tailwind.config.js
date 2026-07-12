@@ -26,8 +26,8 @@ export default {
         rust: '#8A3B12',
       },
       fontFamily: {
-        display: ['"Sora"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        body: ['"Inter"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['"Bricolage Grotesque"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        body: ['"Hanken Grotesk"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
         xl2: '1.75rem',

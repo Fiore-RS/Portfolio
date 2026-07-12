@@ -11,13 +11,18 @@ export default function Footer() {
         </Link>
         <p>{year} Personal Portfolio.</p>
         <div className="flex gap-6 font-medium">
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-accent-600">
+          <a
+            href="https://www.linkedin.com/in/fiorella-salazar-7014a6225/"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-accent-600"
+          >
             LinkedIn
           </a>
-          <a href="mailto:you@example.com" className="hover:text-accent-600">
+          <a href="mailto:fiorella.rodsal5@gmail.com" className="hover:text-accent-600">
             Email
           </a>
-          <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-accent-600">
+          <a href="https://github.com/Fiore-RS" target="_blank" rel="noreferrer" className="hover:text-accent-600">
             GitHub
           </a>
         </div>

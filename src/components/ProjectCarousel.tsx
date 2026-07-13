@@ -2,12 +2,14 @@ import { useRef } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import ProjectCard from './ProjectCard'
 import type { Project } from '../data/types'
+import { ui, useTranslations } from '../i18n/translations'
 
 interface ProjectCarouselProps {
   projects: Project[]
 }
 
 export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
+  const { t } = useTranslations()
   const trackRef = useRef<HTMLDivElement>(null)
 
   const scrollByCard = (direction: 'prev' | 'next') => {
@@ -19,7 +21,7 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
   }
 
   if (projects.length === 0) {
-    return <p className="mt-10 text-body">No projects in this category yet — check back soon.</p>
+    return <p className="mt-10 text-body">{t(ui.work.noProjects)}</p>
   }
 
   return (
@@ -46,7 +48,7 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
           <button
             type="button"
             onClick={() => scrollByCard('prev')}
-            aria-label="Previous project"
+            aria-label={t(ui.work.prev)}
             className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-accent-500 text-accent-500 transition-colors hover:bg-accent-100"
           >
             <ChevronLeft size={22} strokeWidth={2.75} />
@@ -54,7 +56,7 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
           <button
             type="button"
             onClick={() => scrollByCard('next')}
-            aria-label="Next project"
+            aria-label={t(ui.work.next)}
             className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-accent-500 text-accent-500 transition-colors hover:bg-accent-100"
           >
             <ChevronRight size={22} strokeWidth={2.75} />

@@ -7,139 +7,245 @@ export const projects: Project[] = [
   {
     id: '1',
     slug: 'reading-journal',
-    title: 'Reading Journal',
-    type: 'Web App',
+    title: { en: 'Reading Journal', es: 'Reading Journal' },
+    type: { en: 'Web App', es: 'Aplicación Web' },
     category: 'UX/UI Design',
     cardColor: 'bg-terracotta',
-    timeline: '2 weeks',
-    role: 'Solo Designer & Developer',
-    tools: 'React, Tailwind, Express, Drizzle, Neon',
-    overview: [
-      'A personal reading tracker that went from a Claude-generated prototype to a full-stack app: status tracking, series, star-rating reviews, and a stats page with year-by-year breakdowns.',
-      'Built with authentication (JWT, bcrypt, user-scoped data) so the app could support multiple accounts, then deployed the frontend to GitHub Pages and the backend to Render with a Neon Postgres database.',
-    ],
+    timeline: { en: '2 weeks', es: '2 semanas' },
+    role: { en: 'Solo Designer & Developer', es: 'Diseñadora y Desarrolladora Única' },
+    tools: { en: 'React, Tailwind, Express, Drizzle, Neon', es: 'React, Tailwind, Express, Drizzle, Neon' },
+    overview: {
+      en: [
+        'A personal reading tracker that went from a Claude-generated prototype to a full-stack app: status tracking, series, star-rating reviews, and a stats page with year-by-year breakdowns.',
+        'Built with authentication (JWT, bcrypt, user-scoped data) so the app could support multiple accounts, then deployed the frontend to GitHub Pages and the backend to Render with a Neon Postgres database.',
+      ],
+      es: [
+        'Un rastreador de lectura personal que pasó de ser un prototipo generado con Claude a una app full-stack: seguimiento de estado, series, reseñas con calificación por estrellas, y una página de estadísticas con desgloses año por año.',
+        'Construida con autenticación (JWT, bcrypt, datos por usuario) para soportar múltiples cuentas, luego desplegada con el frontend en GitHub Pages y el backend en Render con una base de datos Neon Postgres.',
+      ],
+    },
     gallery: [
-      { color: 'bg-terracotta', alt: 'Reading Journal library grid view' },
-      { color: 'bg-clay', alt: 'Reading Journal stats page' },
-      { color: 'bg-espresso', alt: 'Reading Journal currently-reading carousel' },
-      { color: 'bg-rust', alt: 'Reading Journal book detail page' },
+      {
+        color: 'bg-terracotta',
+        alt: { en: 'Reading Journal library grid view', es: 'Vista de cuadrícula de la biblioteca de Reading Journal' },
+      },
+      { color: 'bg-clay', alt: { en: 'Reading Journal stats page', es: 'Página de estadísticas de Reading Journal' } },
+      {
+        color: 'bg-espresso',
+        alt: { en: 'Reading Journal currently-reading carousel', es: 'Carrusel de lectura actual de Reading Journal' },
+      },
+      {
+        color: 'bg-rust',
+        alt: { en: 'Reading Journal book detail page', es: 'Página de detalle de libro de Reading Journal' },
+      },
     ],
-    summary:
-      'This was my first end-to-end deploy of a full-stack app I designed myself — the sage-green system and the auth flow taught me as much about DevOps as about UI.',
+    summary: {
+      en: 'This was my first end-to-end deploy of a full-stack app I designed myself — the sage-green system and the auth flow taught me as much about DevOps as about UI.',
+      es: 'Este fue mi primer despliegue completo de una app full-stack diseñada por mí misma — el sistema verde salvia y el flujo de autenticación me enseñaron tanto de DevOps como de UI.',
+    },
   },
   {
     id: '2',
     slug: 'pycon-latam-2025',
-    title: 'PyCon LATAM 2025',
-    type: 'Brand Manual & Identity',
+    title: { en: 'PyCon LATAM 2025', es: 'PyCon LATAM 2025' },
+    type: { en: 'Brand Manual & Identity', es: 'Manual de Marca e Identidad' },
     category: 'Graphic Design',
     cardColor: 'bg-clay',
-    timeline: '3 weeks',
-    role: 'Freelance Brand Designer',
-    tools: 'Figma, Adobe Creative Cloud',
-    overview: [
-      'PyCon LATAM 2025 was a Python conference held in Costa Rica at the Universidad de Costa Rica, Sede del Pacífico — my own campus — in August 2025. The event\'s design and advertising team needed extra support, and a friend already on the team recommended me as a freelance collaborator.',
-      'My job was to take the existing logo and finalize it for official event use, then build out the complete brand manual: brand essence, imagotype construction, usage rules, and identity applications. My design professor, Verónica Solano, supervised the process and signed off on the final manual.',
-    ],
+    timeline: { en: '3 weeks', es: '3 semanas' },
+    role: { en: 'Freelance Brand Designer', es: 'Diseñadora de Marca Freelance' },
+    tools: { en: 'Figma, Adobe Creative Cloud', es: 'Figma, Adobe Creative Cloud' },
+    overview: {
+      en: [
+        "PyCon LATAM 2025 was a Python conference held in Costa Rica at the Universidad de Costa Rica, Sede del Pacífico — my own campus — in August 2025. The event's design and advertising team needed extra support, and a friend already on the team recommended me as a freelance collaborator.",
+        'My job was to take the existing logo and finalize it for official event use, then build out the complete brand manual: brand essence, imagotype construction, usage rules, and identity applications. My design professor, Verónica Solano, supervised the process and signed off on the final manual.',
+      ],
+      es: [
+        'PyCon LATAM 2025 fue un evento de Python en Costa Rica realizado en la Universidad de Costa Rica, Sede del Pacífico —mi propia sede como estudiante activa— en agosto de 2025. El equipo de diseño y publicidad del evento necesitaba apoyo, y una amistad que ya era parte del equipo me recomendó como colaboradora freelance.',
+        'Mi labor fue corregir el logo existente y darle los ajustes finales para su uso oficial en el evento, y luego construir el manual de marca completo: esencia de la marca, construcción del imagotipo, usos de la marca, y aplicaciones de identidad. Mi profesora de diseño, Verónica Solano, supervisó el proceso y dio luz verde al manual final.',
+      ],
+    },
     gallery: [
-      { color: 'bg-clay', alt: 'PyCon LATAM 2025 event signage' },
-      { color: 'bg-rust', alt: 'PyCon LATAM 2025 staff shirts and caps' },
-      { color: 'bg-terracotta', alt: 'PyCon LATAM 2025 keychains and rubber bracelets' },
-      { color: 'bg-espresso', alt: 'PyCon LATAM 2025 tote bags and water bottles' },
+      {
+        color: 'bg-clay',
+        alt: { en: 'PyCon LATAM 2025 event signage', es: 'Señalización del evento PyCon LATAM 2025' },
+      },
+      {
+        color: 'bg-rust',
+        alt: { en: 'PyCon LATAM 2025 staff shirts and caps', es: 'Camisetas y gorras de staff de PyCon LATAM 2025' },
+      },
+      {
+        color: 'bg-terracotta',
+        alt: {
+          en: 'PyCon LATAM 2025 keychains and rubber bracelets',
+          es: 'Llaveros y pulseras de goma de PyCon LATAM 2025',
+        },
+      },
+      {
+        color: 'bg-espresso',
+        alt: { en: 'PyCon LATAM 2025 tote bags and water bottles', es: 'Bolsos de tela y botellas de agua de PyCon LATAM 2025' },
+      },
     ],
-    summary:
-      "My first freelance design project — and different from starting a brand from scratch. I had to work inside a logo and direction the team had already chosen, correct it, and extend it into a full manual and a set of physical applications, all while keeping it consistent enough to pass review before the event's August deadline.",
+    summary: {
+      en: "My first freelance design project — and different from starting a brand from scratch. I had to work inside a logo and direction the team had already chosen, correct it, and extend it into a full manual and a set of physical applications, all while keeping it consistent enough to pass review before the event's August deadline.",
+      es: 'Mi primer proyecto de diseño freelance — y distinto a crear una marca desde cero. Tuve que trabajar dentro de un logo y una dirección que el equipo ya había elegido, corregirlo, y extenderlo en un manual completo y un set de aplicaciones físicas, manteniendo la consistencia necesaria para pasar la revisión antes de la fecha límite de agosto.',
+    },
   },
   {
     id: '3',
     slug: 'pixmatic-studios',
-    title: 'Pixmatic Studios',
-    type: 'Brand Identity & Mascot',
+    title: { en: 'Pixmatic Studios', es: 'Pixmatic Studios' },
+    type: { en: 'Brand Identity & Mascot', es: 'Identidad de Marca y Mascota' },
     category: 'Graphic Design',
     cardColor: 'bg-espresso',
-    timeline: '6 weeks',
-    role: 'Personal Project — Solo Designer',
-    tools: 'Figma, Adobe Creative Cloud, Medibang Paint',
-    overview: [
-      'A personal passion project imagining what it would be like to run my own 2D animation studio, in the spirit of Disney, DreamWorks, and Pixar — the name is a nod to the latter. The brief I set for myself: build the full identity for a fictional studio from the ground up.',
-      "The brand needed to feel like a familiar, polished animation house while staying warm and local, so the studio's mascot, Coco, is a playful, friendly three-toed sloth — a national symbol of Costa Rica — wearing a collar tag with a simplified variation of the logo. In the wordmark itself, the X in PIXMATIC becomes a four-pointed star with Coco's simplified face at its center, tying the mascot directly into the logotype.",
-    ],
+    timeline: { en: '6 weeks', es: '6 semanas' },
+    role: { en: 'Personal Project — Solo Designer', es: 'Proyecto Personal — Diseñadora Única' },
+    tools: {
+      en: 'Figma, Adobe Creative Cloud, Medibang Paint',
+      es: 'Figma, Adobe Creative Cloud, Medibang Paint',
+    },
+    overview: {
+      en: [
+        'A personal passion project imagining what it would be like to run my own 2D animation studio, in the spirit of Disney, DreamWorks, and Pixar — the name is a nod to the latter. The brief I set for myself: build the full identity for a fictional studio from the ground up.',
+        "The brand needed to feel like a familiar, polished animation house while staying warm and local, so the studio's mascot, Coco, is a playful, friendly three-toed sloth — a national symbol of Costa Rica — wearing a collar tag with a simplified variation of the logo. In the wordmark itself, the X in PIXMATIC becomes a four-pointed star with Coco's simplified face at its center, tying the mascot directly into the logotype.",
+      ],
+      es: [
+        'Un proyecto personal por diversión, imaginando cómo sería tener mi propio estudio de animación 2D al estilo Disney o DreamWorks — el nombre es un guiño a Pixar. El reto que me propuse: construir la identidad completa de un estudio ficticio desde cero.',
+        'La marca necesitaba transmitir un aire familiar al estilo Pixar, pero manteniendo calidez local, así que la mascota del estudio, Coco, es un perezoso juguetón y amigable — símbolo nacional de Costa Rica — que lleva un collar con una chapita con una variación simplificada del logo. En el logotipo, la X de PIXMATIC se convierte en una estrella de cuatro puntas con la carita simplificada de Coco en el centro, conectando la mascota directamente con el logotipo.',
+      ],
+    },
     gallery: [
-      { color: 'bg-espresso', alt: 'Pixmatic Studios logo color variations' },
-      { color: 'bg-rust', alt: 'Pixmatic Studios logo formats and usage' },
-      { color: 'bg-clay', alt: 'Coco the sloth mascot character design' },
-      { color: 'bg-terracotta', alt: 'Pixmatic Studios brand applications' },
+      {
+        color: 'bg-espresso',
+        alt: { en: 'Pixmatic Studios logo color variations', es: 'Variaciones de color del logo de Pixmatic Studios' },
+      },
+      {
+        color: 'bg-rust',
+        alt: { en: 'Pixmatic Studios logo formats and usage', es: 'Formatos y usos del logo de Pixmatic Studios' },
+      },
+      {
+        color: 'bg-clay',
+        alt: { en: 'Coco the sloth mascot character design', es: 'Diseño del personaje Coco, la mascota perezoso' },
+      },
+      {
+        color: 'bg-terracotta',
+        alt: { en: 'Pixmatic Studios brand applications', es: 'Aplicaciones de marca de Pixmatic Studios' },
+      },
     ],
-    summary:
-      "Designing a full identity system and an original character at the same time pushed me to think about branding and illustration together — how a mascot's personality has to survive being simplified down into a single mark inside a logo, and how a playful character can still sit inside a disciplined brand system.",
-  },
-  {
-    id: '4',
-    slug: 'project-title-4',
-    title: 'Project Title',
-    type: 'Web Platform',
-    category: 'UX/UI Design',
-    cardColor: 'bg-rust',
-    timeline: 'XX weeks',
-    role: 'Product Designer',
-    tools: 'Figma, React',
-    overview: [
-      'Replace this with a short description of the project: who it was for, the problem it solved, and your role.',
-      'Add a second paragraph on the process or a key decision you made along the way.',
-    ],
-    gallery: [
-      { color: 'bg-rust', alt: 'Placeholder gallery image 1' },
-      { color: 'bg-terracotta', alt: 'Placeholder gallery image 2' },
-      { color: 'bg-clay', alt: 'Placeholder gallery image 3' },
-      { color: 'bg-espresso', alt: 'Placeholder gallery image 4' },
-    ],
-    summary: 'Replace with a closing reflection on what this project taught you.',
+    summary: {
+      en: "Designing a full identity system and an original character at the same time pushed me to think about branding and illustration together — how a mascot's personality has to survive being simplified down into a single mark inside a logo, and how a playful character can still sit inside a disciplined brand system.",
+      es: 'Diseñar un sistema de identidad completo y un personaje original al mismo tiempo me hizo pensar en branding e ilustración de forma conjunta — cómo la personalidad de una mascota debe sobrevivir al simplificarse en una sola marca dentro de un logo, y cómo un personaje juguetón puede convivir dentro de un sistema de marca disciplinado.',
+    },
   },
   {
     id: '5',
     slug: 'happy-home',
-    title: 'Happy Home',
-    type: 'Logo & Brand Identity',
+    title: { en: 'Happy Home', es: 'Happy Home' },
+    type: { en: 'Logo & Brand Identity', es: 'Logo e Identidad de Marca' },
     category: 'Graphic Design',
     cardColor: 'bg-terracotta',
-    timeline: '1 week',
-    role: 'Freelance Graphic Designer',
-    tools: 'Figma, Adobe Creative Cloud',
-    overview: [
-      'Happy Home rents rooms to exchange students in Costa Rica. The business already had a logo, but wanted something more iconic and distinctly their own — an identity that could hold up as they started marketing to an international audience.',
-      'The new mark is an icon + wordmark logo built around a simple idea: a happy face shaped like a house. Alongside the logo, I designed functional keychains carrying the mark, made for the actual room keys tenants use day to day.',
-    ],
+    timeline: { en: '1 week', es: '1 semana' },
+    role: { en: 'Freelance Graphic Designer', es: 'Diseñadora Gráfica Freelance' },
+    tools: { en: 'Figma, Adobe Creative Cloud', es: 'Figma, Adobe Creative Cloud' },
+    overview: {
+      en: [
+        'Happy Home rents rooms to exchange students in Costa Rica. The business already had a logo, but wanted something more iconic and distinctly their own — an identity that could hold up as they started marketing to an international audience.',
+        'The new mark is an icon + wordmark logo built around a simple idea: a happy face shaped like a house. Alongside the logo, I designed functional keychains carrying the mark, made for the actual room keys tenants use day to day.',
+      ],
+      es: [
+        'Happy Home alquila habitaciones a estudiantes de intercambio en Costa Rica. El negocio ya tenía un logo, pero querían algo más icónico y propio, una identidad que resistiera al empezar a promocionarse frente a una audiencia internacional.',
+        'La nueva marca es un logo de ícono + texto construido alrededor de una idea simple: una cara feliz con forma de casa. Junto al logo, diseñé llaveros funcionales con la marca, pensados para las llaves reales que los inquilinos usan día a día.',
+      ],
+    },
     gallery: [
-      { color: 'bg-terracotta', alt: 'Happy Home logo icon exploration' },
-      { color: 'bg-clay', alt: 'Happy Home full logo lockup' },
-      { color: 'bg-espresso', alt: 'Happy Home room key keychain mockups' },
-      { color: 'bg-rust', alt: 'Happy Home logo usage examples' },
+      {
+        color: 'bg-terracotta',
+        alt: { en: 'Happy Home logo icon exploration', es: 'Exploración del ícono del logo de Happy Home' },
+      },
+      { color: 'bg-clay', alt: { en: 'Happy Home full logo lockup', es: 'Logotipo completo de Happy Home' } },
+      {
+        color: 'bg-espresso',
+        alt: { en: 'Happy Home room key keychain mockups', es: 'Mockups de llaveros de llaves de Happy Home' },
+      },
+      { color: 'bg-rust', alt: { en: 'Happy Home logo usage examples', es: 'Ejemplos de uso del logo de Happy Home' } },
     ],
-    summary:
-      'A short, paid freelance turnaround taught me to move fast without losing the client\'s input — a one-week timeline meant getting the icon concept right early, since there wasn\'t room for many rounds of revisions.',
+    summary: {
+      en: "A short, paid freelance turnaround taught me to move fast without losing the client's input — a one-week timeline meant getting the icon concept right early, since there wasn't room for many rounds of revisions.",
+      es: 'Un proyecto freelance pagado y de entrega rápida me enseñó a avanzar rápido sin perder la retroalimentación del cliente — un plazo de una semana significó acertar con el concepto del ícono desde temprano, ya que no había espacio para muchas rondas de revisión.',
+    },
   },
   {
     id: '6',
     slug: 'hack-gb',
-    title: 'Hack GB',
-    type: 'Event Branding',
+    title: { en: 'Hack GB', es: 'Hack GB' },
+    type: { en: 'Event Branding', es: 'Identidad de Evento' },
     category: 'Graphic Design',
     cardColor: 'bg-rust',
-    timeline: '1 week',
-    role: 'Design Team Support',
-    tools: 'Figma, Adobe Creative Cloud, Medibang Paint',
-    overview: [
-      "HackGB is the University of Wisconsin-Green Bay's collegiate hackathon, a 24-hour weekend bringing together developers, hardware engineers, and designers. The event's design team needed the logo finished fast — they were about to launch their sponsor outreach campaign and couldn't wait.",
-      "The mark centers on a phoenix, referencing UW-Green Bay's own mascot and school spirit, paired with the \"Hack GB\" wordmark. With sponsorship materials on a tight deadline, the priority was landing a strong, recognizable symbol in one week rather than exploring dozens of directions.",
-    ],
+    timeline: { en: '1 week', es: '1 semana' },
+    role: { en: 'Design Team Support', es: 'Apoyo al Equipo de Diseño' },
+    tools: {
+      en: 'Figma, Adobe Creative Cloud, Medibang Paint',
+      es: 'Figma, Adobe Creative Cloud, Medibang Paint',
+    },
+    overview: {
+      en: [
+        "HackGB is the University of Wisconsin-Green Bay's collegiate hackathon, a 24-hour weekend bringing together developers, hardware engineers, and designers. The event's design team needed the logo finished fast — they were about to launch their sponsor outreach campaign and couldn't wait.",
+        'The mark centers on a phoenix, referencing UW-Green Bay\'s own mascot and school spirit, paired with the "Hack GB" wordmark. With sponsorship materials on a tight deadline, the priority was landing a strong, recognizable symbol in one week rather than exploring dozens of directions.',
+      ],
+      es: [
+        'HackGB es el hackathon universitario de la Universidad de Wisconsin-Green Bay, un fin de semana de 24 horas que reúne a desarrolladores, ingenieros de hardware y diseñadores. El equipo de diseño del evento necesitaba el logo terminado rápido — estaban por lanzar su campaña de búsqueda de patrocinadores y no podían esperar.',
+        'La marca se centra en un fénix, en referencia a la mascota de UW-Green Bay, junto al texto "Hack GB". Con los materiales de patrocinio bajo una fecha límite ajustada, la prioridad fue lograr un símbolo fuerte y reconocible en una semana, en vez de explorar docenas de direcciones.',
+      ],
+    },
     gallery: [
-      { color: 'bg-rust', alt: 'Hack GB phoenix logo icon' },
-      { color: 'bg-terracotta', alt: 'Hack GB full logo lockup' },
-      { color: 'bg-clay', alt: 'Hack GB logo color variations' },
-      { color: 'bg-espresso', alt: 'Hack GB sponsor deck applications' },
+      { color: 'bg-rust', alt: { en: 'Hack GB phoenix logo icon', es: 'Ícono del logo fénix de Hack GB' } },
+      { color: 'bg-terracotta', alt: { en: 'Hack GB full logo lockup', es: 'Logotipo completo de Hack GB' } },
+      {
+        color: 'bg-clay',
+        alt: { en: 'Hack GB logo color variations', es: 'Variaciones de color del logo de Hack GB' },
+      },
+      {
+        color: 'bg-espresso',
+        alt: {
+          en: 'Hack GB sponsor deck applications',
+          es: 'Aplicaciones en material para patrocinadores de Hack GB',
+        },
+      },
     ],
-    summary:
-      "Designing under a hard sponsor-outreach deadline meant trusting my first strong direction instead of iterating endlessly — a good exercise in delivering a clear, symbolic mark (the phoenix) quickly for a team I'd never worked with before.",
+    summary: {
+      en: "Designing under a hard sponsor-outreach deadline meant trusting my first strong direction instead of iterating endlessly — a good exercise in delivering a clear, symbolic mark (the phoenix) quickly for a team I'd never worked with before.",
+      es: 'Diseñar bajo una fecha límite estricta para la búsqueda de patrocinadores significó confiar en mi primera dirección fuerte en vez de iterar sin fin — un buen ejercicio para entregar rápido una marca clara y simbólica (el fénix) para un equipo con el que nunca había trabajado.',
+    },
+  },
+  {
+    id: '4',
+    slug: 'project-title-4',
+    title: { en: 'Project Title', es: 'Título del Proyecto' },
+    type: { en: 'Web Platform', es: 'Plataforma Web' },
+    category: 'UX/UI Design',
+    cardColor: 'bg-clay',
+    timeline: { en: 'XX weeks', es: 'XX semanas' },
+    role: { en: 'Product Designer', es: 'Diseñadora de Producto' },
+    tools: { en: 'Figma, React', es: 'Figma, React' },
+    overview: {
+      en: [
+        'Replace this with a short description of the project: who it was for, the problem it solved, and your role.',
+        'Add a second paragraph on the process or a key decision you made along the way.',
+      ],
+      es: [
+        'Reemplaza esto con una breve descripción del proyecto: para quién fue, qué problema resolvió, y tu rol.',
+        'Agrega un segundo párrafo sobre el proceso o una decisión clave que tomaste en el camino.',
+      ],
+    },
+    gallery: [
+      { color: 'bg-rust', alt: { en: 'Placeholder gallery image 1', es: 'Imagen de galería de ejemplo 1' } },
+      { color: 'bg-terracotta', alt: { en: 'Placeholder gallery image 2', es: 'Imagen de galería de ejemplo 2' } },
+      { color: 'bg-clay', alt: { en: 'Placeholder gallery image 3', es: 'Imagen de galería de ejemplo 3' } },
+      { color: 'bg-espresso', alt: { en: 'Placeholder gallery image 4', es: 'Imagen de galería de ejemplo 4' } },
+    ],
+    summary: {
+      en: 'Replace with a closing reflection on what this project taught you.',
+      es: 'Reemplaza con una reflexión final sobre lo que este proyecto te enseñó.',
+    },
   },
 ]
 

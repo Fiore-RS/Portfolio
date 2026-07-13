@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
+import { ui, useTranslations } from '../i18n/translations'
 
 export default function Footer() {
+  const { t } = useTranslations()
   const year = new Date().getFullYear()
 
   return (
@@ -9,7 +11,9 @@ export default function Footer() {
         <Link to="/" className="font-display text-lg font-bold text-accent-600">
           Portfolio
         </Link>
-        <p>{year} Personal Portfolio.</p>
+        <p>
+          {year} {t(ui.footer.tagline)}
+        </p>
         <div className="flex gap-6 font-medium">
           <a
             href="https://www.linkedin.com/in/fiorella-salazar-7014a6225/"

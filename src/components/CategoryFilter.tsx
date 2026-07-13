@@ -1,4 +1,5 @@
 import type { ProjectCategory } from '../data/types'
+import { ui, useTranslations } from '../i18n/translations'
 
 interface CategoryFilterProps {
   categories: ProjectCategory[]
@@ -7,12 +8,14 @@ interface CategoryFilterProps {
 }
 
 export default function CategoryFilter({ categories, active, onChange }: CategoryFilterProps) {
+  const { t } = useTranslations()
   const options: (ProjectCategory | 'All')[] = ['All', ...categories]
 
   return (
     <div className="flex flex-wrap gap-3" role="group" aria-label="Filter projects by category">
       {options.map((option) => {
         const isActive = active === option
+        const label = option === 'All' ? t(ui.work.filterAll) : t(ui.categories[option])
         return (
           <button
             key={option}
@@ -25,7 +28,7 @@ export default function CategoryFilter({ categories, active, onChange }: Categor
                 : 'border-accent-300 bg-transparent text-accent-600 hover:bg-accent-100'
             }`}
           >
-            {option}
+            {label}
           </button>
         )
       })}

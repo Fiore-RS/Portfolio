@@ -17,13 +17,14 @@ import type { ComponentType } from 'react'
 import ProjectCarousel from '../components/ProjectCarousel'
 import CategoryFilter from '../components/CategoryFilter'
 import { projects } from '../data/projects'
-import type { ProjectCategory } from '../data/types'
+import type { ProjectCategory, Localized } from '../data/types'
+import { ui, useTranslations } from '../i18n/translations'
 
 const categories: ProjectCategory[] = ['Graphic Design', 'UX/UI Design']
 
 interface ToolGroup {
-  title: string
-  items: string[]
+  title: Localized
+  items: { en: string[]; es: string[] }
   icon: ComponentType<{ size?: number; className?: string }>
   iconBg: string
   iconColor: string
@@ -31,22 +32,22 @@ interface ToolGroup {
 
 const tools: ToolGroup[] = [
   {
-    title: 'UX/UI Strategy',
-    items: ['User Research & Synthesis', 'Information Architecture', 'Interactive Prototyping'],
+    title: ui.craftTools.uxui,
+    items: ui.craftTools.uxuiItems,
     icon: LayoutPanelLeft,
     iconBg: 'bg-accent-200',
     iconColor: 'text-accent-600',
   },
   {
-    title: 'Visual Design',
-    items: ['Design Systems', 'Brand Identity & Logos', 'Typography & Color Theory'],
+    title: ui.craftTools.visual,
+    items: ui.craftTools.visualItems,
     icon: ImageIcon,
     iconBg: 'bg-terracotta/25',
     iconColor: 'text-rust',
   },
   {
-    title: 'Frontend',
-    items: ['Semantic HTML & CSS', 'Tailwind & Modern CSS', 'React'],
+    title: ui.craftTools.frontend,
+    items: ui.craftTools.frontendItems,
     icon: Code2,
     iconBg: 'bg-clay/30',
     iconColor: 'text-espresso',
@@ -54,10 +55,10 @@ const tools: ToolGroup[] = [
 ]
 
 interface ExperienceEntry {
-  title: string
+  title: Localized
   years: string
-  role: string
-  description: string
+  role: Localized
+  description: Localized
   icon: ComponentType<{ size?: number; className?: string }>
   iconBg: string
   iconColor: string
@@ -65,28 +66,37 @@ interface ExperienceEntry {
 
 const experience: ExperienceEntry[] = [
   {
-    title: 'Reading Journal',
+    title: { en: 'Reading Journal', es: 'Reading Journal' },
     years: '2025 - 2026',
-    role: 'Solo Designer & Developer',
-    description: 'Designed and shipped a full-stack reading tracker end to end, from prototype to deployment.',
+    role: { en: 'Solo Designer & Developer', es: 'Diseñadora y Desarrolladora Única' },
+    description: {
+      en: 'Designed and shipped a full-stack reading tracker end to end, from prototype to deployment.',
+      es: 'Diseñé y lancé un rastreador de lectura full-stack de principio a fin, desde el prototipo hasta el despliegue.',
+    },
     icon: Network,
     iconBg: 'bg-accent-200',
     iconColor: 'text-accent-600',
   },
   {
-    title: 'Project Name',
-    years: '20XX - 20XX',
-    role: 'Role in project',
-    description: 'Replace with a short description of this project and your role in it.',
+    title: { en: 'PyCon LATAM 2025', es: 'PyCon LATAM 2025' },
+    years: '2025',
+    role: { en: 'Freelance Brand Designer', es: 'Diseñadora de Marca Freelance' },
+    description: {
+      en: 'Corrected the event logo and built the complete brand manual, supervised by my design professor.',
+      es: 'Corregí el logo del evento y construí el manual de marca completo, supervisado por mi profesora de diseño.',
+    },
     icon: Puzzle,
     iconBg: 'bg-terracotta/25',
     iconColor: 'text-rust',
   },
   {
-    title: 'Project Name',
-    years: '20XX - 20XX',
-    role: 'Role in project',
-    description: 'Replace with a short description of this project and your role in it.',
+    title: { en: 'Happy Home', es: 'Happy Home' },
+    years: '2025',
+    role: { en: 'Freelance Graphic Designer', es: 'Diseñadora Gráfica Freelance' },
+    description: {
+      en: 'Redesigned the logo and identity for a student housing business in one week, paid freelance.',
+      es: 'Rediseñé el logo e identidad de un negocio de alquiler para estudiantes en una semana, freelance pagado.',
+    },
     icon: Images,
     iconBg: 'bg-clay/30',
     iconColor: 'text-espresso',
@@ -96,21 +106,21 @@ const experience: ExperienceEntry[] = [
 const connectLinks = [
   {
     label: 'LinkedIn',
-    subtitle: 'Professional Network & Updates',
+    subtitle: ui.connect.linkedinSubtitle,
     href: 'https://www.linkedin.com/in/fiorella-salazar-7014a6225/',
     icon: Share2,
     trailing: 'arrow' as const,
   },
   {
     label: 'GitHub',
-    subtitle: 'Open Source Projects & Code',
+    subtitle: ui.connect.githubSubtitle,
     href: 'https://github.com/Fiore-RS',
     icon: Github,
     trailing: 'arrow' as const,
   },
   {
-    label: 'Email Me',
-    subtitle: 'Direct Inquiries & Collaborations',
+    label: { en: 'Email Me', es: 'Escríbeme' },
+    subtitle: ui.connect.emailSubtitle,
     href: 'mailto:fiorella.rodsal5@gmail.com',
     icon: Mail,
     trailing: 'send' as const,
@@ -118,6 +128,7 @@ const connectLinks = [
 ]
 
 export default function Home() {
+  const { t, tArr } = useTranslations()
   const [filter, setFilter] = useState<ProjectCategory | 'All'>('All')
 
   const visibleProjects = useMemo(() => {
@@ -130,27 +141,24 @@ export default function Home() {
       <section className="mx-auto grid max-w-6xl gap-12 px-6 pb-16 pt-8 md:grid-cols-[1.15fr_1fr] md:items-center md:pb-24 md:pt-12">
         <div>
           <span className="inline-block rounded-full bg-accent-100 px-3.5 py-1 text-xs font-medium text-accent-600">
-            Welcome to my creative studio!
+            {t(ui.hero.badge)}
           </span>
           <h1 className="mt-6 font-display text-[2.75rem] font-extrabold leading-[1.15] text-ink md:text-5xl">
-            Crafting digital experiences with <span className="text-accent-500">soul.</span>
+            {t(ui.hero.titleStart)} <span className="text-accent-500">{t(ui.hero.titleHighlight)}</span>
           </h1>
-          <p className="mt-6 max-w-lg text-body">
-            I design and build full-stack web platforms — from research and interface design through
-            to a working, deployed product.
-          </p>
+          <p className="mt-6 max-w-lg text-body">{t(ui.hero.body)}</p>
           <div className="mt-8 flex gap-4">
             <Link
               to="/#work"
               className="rounded-2xl bg-accent-400 px-6 py-3 font-semibold text-white transition-colors hover:bg-accent-600"
             >
-              View My Work →
+              {t(ui.hero.viewWork)}
             </Link>
             <Link
               to="/#about"
               className="rounded-2xl border border-ink/20 px-6 py-3 font-semibold text-ink transition-colors hover:border-ink/40"
             >
-              About Me
+              {t(ui.hero.aboutMe)}
             </Link>
           </div>
         </div>
@@ -172,9 +180,9 @@ export default function Home() {
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <h2 className="text-4xl font-bold">
-              Selected <span className="text-accent-500">work.</span>
+              {t(ui.work.heading)} <span className="text-accent-500">{t(ui.work.headingHighlight)}</span>
             </h2>
-            <p className="mt-3 max-w-md text-body">A few recent projects, spanning product design and development.</p>
+            <p className="mt-3 max-w-md text-body">{t(ui.work.subtitle)}</p>
           </div>
           <CategoryFilter categories={categories} active={filter} onChange={setFilter} />
         </div>
@@ -186,7 +194,7 @@ export default function Home() {
             to="/work"
             className="inline-block rounded-full bg-accent-400 px-6 py-3 font-semibold text-white transition-colors hover:bg-accent-600"
           >
-            All My Projects →
+            {t(ui.work.allProjects)}
           </Link>
         </div>
       </section>
@@ -194,23 +202,23 @@ export default function Home() {
       {/* Craft & Tools */}
       <section id="about" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-16">
         <h2 className="text-4xl font-bold">
-          Craft &amp; <span className="text-accent-500">Tools.</span>
+          {t(ui.craftTools.heading)} <span className="text-accent-500">{t(ui.craftTools.headingHighlight)}</span>
         </h2>
-        <p className="mt-3 max-w-md text-body">What I bring to a project, end to end.</p>
+        <p className="mt-3 max-w-md text-body">{t(ui.craftTools.subtitle)}</p>
 
         <div className="mt-10 grid gap-5 md:grid-cols-3">
           {tools.map((group) => {
             const Icon = group.icon
             return (
-              <div key={group.title} className="rounded-2xl bg-paper p-6 shadow-sm">
+              <div key={t(group.title)} className="rounded-2xl bg-paper p-6 shadow-sm">
                 <div className="flex items-start justify-between">
-                  <h3 className="text-lg font-bold">{group.title}</h3>
+                  <h3 className="text-lg font-bold">{t(group.title)}</h3>
                   <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${group.iconBg}`}>
                     <Icon size={20} className={group.iconColor} />
                   </span>
                 </div>
                 <ul className="mt-4 space-y-2 text-sm text-body">
-                  {group.items.map((item) => (
+                  {tArr(group.items).map((item) => (
                     <li key={item} className="flex gap-2">
                       <span aria-hidden="true" className="text-accent-500">
                         •
@@ -228,26 +236,26 @@ export default function Home() {
       {/* Professional Experience */}
       <section className="mx-auto max-w-6xl px-6 py-16">
         <h2 className="text-4xl font-bold">
-          My Professional <span className="text-accent-500">Experience.</span>
+          {t(ui.experience.heading)} <span className="text-accent-500">{t(ui.experience.headingHighlight)}</span>
         </h2>
-        <p className="mt-3 max-w-md text-body">A few of the projects I've worked on recently.</p>
+        <p className="mt-3 max-w-md text-body">{t(ui.experience.subtitle)}</p>
 
         <div className="mt-10 grid gap-5 md:grid-cols-3">
           {experience.map((entry) => {
             const Icon = entry.icon
             return (
-              <div key={entry.title} className="rounded-2xl bg-paper p-6 shadow-sm">
+              <div key={t(entry.title)} className="rounded-2xl bg-paper p-6 shadow-sm">
                 <div className="flex items-start justify-between">
                   <div>
-                    <h3 className="text-lg font-bold">{entry.title}</h3>
+                    <h3 className="text-lg font-bold">{t(entry.title)}</h3>
                     <p className="text-sm text-body/70">{entry.years}</p>
                   </div>
                   <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${entry.iconBg}`}>
                     <Icon size={20} className={entry.iconColor} />
                   </span>
                 </div>
-                <p className="mt-4 text-sm font-semibold text-ink">{entry.role}</p>
-                <p className="mt-2 text-sm text-body">{entry.description}</p>
+                <p className="mt-4 text-sm font-semibold text-ink">{t(entry.role)}</p>
+                <p className="mt-2 text-sm text-body">{t(entry.description)}</p>
               </div>
             )
           })}
@@ -261,11 +269,8 @@ export default function Home() {
           alt="Portrait placeholder"
           className="mx-auto h-20 w-20 rounded-full object-cover"
         />
-        <h2 className="mt-6 text-4xl font-bold">Let's Connect!</h2>
-        <p className="mx-auto mt-3 max-w-md text-body">
-          I'm always open to new collaborations, creative projects, or just a friendly conversation over digital
-          coffee.
-        </p>
+        <h2 className="mt-6 text-4xl font-bold">{t(ui.connect.heading)}</h2>
+        <p className="mx-auto mt-3 max-w-md text-body">{t(ui.connect.subtitle)}</p>
 
         <div className="mt-8 space-y-3 text-left">
           {connectLinks.map((link) => {
@@ -273,7 +278,7 @@ export default function Home() {
             const Trailing = link.trailing === 'send' ? Send : null
             return (
               <a
-                key={link.label}
+                key={link.href}
                 href={link.href}
                 target={link.href.startsWith('http') ? '_blank' : undefined}
                 rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
@@ -284,8 +289,10 @@ export default function Home() {
                     <Icon size={18} />
                   </span>
                   <span>
-                    <span className="block font-semibold text-ink">{link.label}</span>
-                    <span className="block text-sm text-body/70">{link.subtitle}</span>
+                    <span className="block font-semibold text-ink">
+                      {typeof link.label === 'string' ? link.label : t(link.label)}
+                    </span>
+                    <span className="block text-sm text-body/70">{t(link.subtitle)}</span>
                   </span>
                 </span>
                 {Trailing ? (
@@ -302,14 +309,14 @@ export default function Home() {
 
         <div className="mt-10 flex items-center justify-center gap-4 text-sm text-body/70">
           <span className="h-px w-12 bg-ink/15" aria-hidden="true" />
-          <span>"Sometimes, less is more"</span>
+          <span>{t(ui.connect.quote)}</span>
           <span className="h-px w-12 bg-ink/15" aria-hidden="true" />
         </div>
 
         <div className="mt-8 rounded-2xl bg-accent-100 px-6 py-5 text-accent-600">
           <MapPin size={20} className="mx-auto" />
           <p className="mt-2 font-semibold">
-            Currently based in
+            {t(ui.connect.locationLabel)}
             <br />
             Alajuela, Costa Rica
           </p>

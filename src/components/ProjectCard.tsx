@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import type { Project } from '../data/types'
+import { useTranslations } from '../i18n/translations'
 
 interface ProjectCardProps {
   project: Project
@@ -8,6 +9,7 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project, size = 'default' }: ProjectCardProps) {
+  const { t } = useTranslations()
   return (
     <Link
       to={`/work/${project.slug}`}
@@ -31,8 +33,8 @@ export default function ProjectCard({ project, size = 'default' }: ProjectCardPr
       <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/0 to-black/0" />
 
       <div className="relative flex h-full flex-col justify-end p-6">
-        <span className="text-sm font-medium text-white/80">{project.type}</span>
-        <h3 className="font-display text-2xl font-bold text-white">{project.title}</h3>
+        <span className="text-sm font-medium text-white/80">{t(project.type)}</span>
+        <h3 className="font-display text-2xl font-bold text-white">{t(project.title)}</h3>
       </div>
     </Link>
   )

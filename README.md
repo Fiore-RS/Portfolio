@@ -11,19 +11,33 @@ npm run dev
 
 ## Structure
 
+- **Bilingual (EN/ES)**: `src/i18n/LanguageContext.tsx` holds the current language (persisted in
+  `localStorage`, defaults to the visitor's browser language) and `src/i18n/translations.ts`
+  holds every UI string in both languages plus the `useTranslations()` hook (`t()` for single
+  strings, `tArr()` for string lists). The toggle button lives in the header. Project content in
+  `src/data/projects.ts` is bilingual too — every text field is `{ en, es }` instead of a plain
+  string.
 - `src/pages/Home.tsx` — the whole one-page scroll: Hero, Selected Work, Craft &
   Tools, Experience, Let's Connect. Nav links in the header scroll to `#work`,
   `#about`, and `#contact` on this page rather than routing elsewhere.
 - `src/pages/AllProjects.tsx` (`/work`) and `src/pages/ProjectDetail.tsx`
-  (`/work/:slug`) are the only separate pages/routes.
+  (`/work/:slug`) are the only separate pages/routes, plus `src/pages/Hire.tsx` (`/hire`).
 - `src/components/ScrollToHash.tsx` — makes the header's `/#work`-style links
   smooth-scroll to the right section, even when navigating there from a
   project detail page.
-- `src/data/projects.ts` — all project content lives here. Seeded with Reading
-  Journal; three placeholder entries are marked "Project Title" — replace
-  those as you add more projects you want to showcase.
-- `src/components/ProjectCard.tsx` — the card used on Home and All Projects.
+- `src/data/projects.ts` — all project content lives here, in both languages. Seeded with
+  Reading Journal, PyCon LATAM 2025, Pixmatic Studios, Happy Home, and Hack GB; one
+  placeholder UX/UI entry ("Project Title") is left to replace as you add more.
+- `src/components/ProjectCard.tsx` / `ProjectCarousel.tsx` — the swipeable, scroll-snap
+  carousel used for "Selected work" (uniform card size, no page-height growth as you add
+  projects) and the grid used on `/work`.
 - `src/components/CategoryFilter.tsx` — the pill toggle for Graphic Design / UX/UI Design.
+
+### Adding a new project
+
+Add an entry to the `projects` array in `src/data/projects.ts`. Every text field needs both
+`en` and `es` values — there's no automatic translation, so write (or paste a translation of)
+the Spanish version yourself.
 
 ## Improvements applied from the Figma review
 

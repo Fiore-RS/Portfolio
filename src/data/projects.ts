@@ -51,6 +51,10 @@ export const projects: Project[] = [
       en: 'This was my first end-to-end deploy of a full-stack app I designed myself — the sage-green system and the auth flow taught me as much about DevOps as about UI.',
       es: 'Este fue mi primer despliegue completo de una app full-stack diseñada por mí misma — el sistema verde salvia y el flujo de autenticación me enseñaron tanto de DevOps como de UI.',
     },
+    liveUrl: {
+      url: 'https://fiore-rs.github.io/ReadingJournal/',
+      label: { en: 'View Live Site', es: 'Ver Sitio en Vivo' },
+    },
   },
   {
     id: '2',
@@ -130,24 +134,24 @@ export const projects: Project[] = [
     },
     gallery: [
       {
-        color: 'bg-espresso',
-        image: '/projects/pixmatic-studios/logo-colors.png',
-        alt: { en: 'Pixmatic Studios logo color variations', es: 'Variaciones de color del logo de Pixmatic Studios' },
-      },
-      {
         color: 'bg-rust',
         image: '/projects/pixmatic-studios/logo-formats.png',
         alt: { en: 'Pixmatic Studios logo formats and usage', es: 'Formatos y usos del logo de Pixmatic Studios' },
       },
       {
-        color: 'bg-clay',
-        image: '/projects/pixmatic-studios/mascot-coco.png',
-        alt: { en: 'Coco the sloth mascot character design', es: 'Diseño del personaje Coco, la mascota perezoso' },
+        color: 'bg-espresso',
+        image: '/projects/pixmatic-studios/logo-colors.png',
+        alt: { en: 'Pixmatic Studios logo color variations', es: 'Variaciones de color del logo de Pixmatic Studios' },
       },
       {
         color: 'bg-terracotta',
         image: '/projects/pixmatic-studios/icon-colors.png',
         alt: { en: 'Pixmatic Studios icon color variations', es: 'Variaciones de color del ícono de Pixmatic Studios' },
+      },
+      {
+        color: 'bg-clay',
+        image: '/projects/pixmatic-studios/mascot-coco.png',
+        alt: { en: 'Coco the sloth mascot character design', es: 'Diseño del personaje Coco, la mascota perezoso' },
       },
     ],
     summary: {
@@ -210,6 +214,7 @@ export const projects: Project[] = [
     type: { en: 'Event Branding', es: 'Identidad de Evento' },
     category: 'Graphic Design',
     cardColor: 'bg-rust',
+    image: '/projects/hack-gb/cover.png',
     timeline: { en: '1 week', es: '1 semana' },
     role: { en: 'Design Team Support', es: 'Apoyo al Equipo de Diseño' },
     tools: {
@@ -227,18 +232,25 @@ export const projects: Project[] = [
       ],
     },
     gallery: [
-      { color: 'bg-rust', alt: { en: 'Hack GB phoenix logo icon', es: 'Ícono del logo fénix de Hack GB' } },
-      { color: 'bg-terracotta', alt: { en: 'Hack GB full logo lockup', es: 'Logotipo completo de Hack GB' } },
       {
         color: 'bg-clay',
-        alt: { en: 'Hack GB logo color variations', es: 'Variaciones de color del logo de Hack GB' },
+        image: '/projects/hack-gb/logo-colors.png',
+        alt: { en: 'Hack GB full logo color variations', es: 'Variaciones de color del logo completo de Hack GB' },
+      },
+      {
+        color: 'bg-rust',
+        image: '/projects/hack-gb/logo-formats.png',
+        alt: { en: 'Hack GB logo and icon formats', es: 'Formatos del logo e ícono de Hack GB' },
+      },
+      {
+        color: 'bg-terracotta',
+        image: '/projects/hack-gb/icon-colors.png',
+        alt: { en: 'Hack GB phoenix icon color variations', es: 'Variaciones de color del ícono fénix de Hack GB' },
       },
       {
         color: 'bg-espresso',
-        alt: {
-          en: 'Hack GB sponsor deck applications',
-          es: 'Aplicaciones en material para patrocinadores de Hack GB',
-        },
+        image: '/projects/hack-gb/logo-colors-2.png',
+        alt: { en: 'Hack GB additional logo color variations', es: 'Variaciones de color adicionales del logo de Hack GB' },
       },
     ],
     summary: {

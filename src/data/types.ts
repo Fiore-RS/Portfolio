@@ -24,4 +24,6 @@ export interface Project {
   summary: Localized
   /** Optional downloadable document (e.g. a brand manual PDF) shown as a button on the project page. */
   pdf?: { path: string; label: Localized }
+  /** Optional external link (e.g. the live deployed site) shown as a button on the project page. */
+  liveUrl?: { url: string; label: Localized }
 }

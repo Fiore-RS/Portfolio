@@ -216,37 +216,6 @@ export const projects: Project[] = [
       es: 'Diseñar bajo una fecha límite estricta para la búsqueda de patrocinadores significó confiar en mi primera dirección fuerte en vez de iterar sin fin — un buen ejercicio para entregar rápido una marca clara y simbólica (el fénix) para un equipo con el que nunca había trabajado.',
     },
   },
-  {
-    id: '4',
-    slug: 'project-title-4',
-    title: { en: 'Project Title', es: 'Título del Proyecto' },
-    type: { en: 'Web Platform', es: 'Plataforma Web' },
-    category: 'UX/UI Design',
-    cardColor: 'bg-clay',
-    timeline: { en: 'XX weeks', es: 'XX semanas' },
-    role: { en: 'Product Designer', es: 'Diseñadora de Producto' },
-    tools: { en: 'Figma, React', es: 'Figma, React' },
-    overview: {
-      en: [
-        'Replace this with a short description of the project: who it was for, the problem it solved, and your role.',
-        'Add a second paragraph on the process or a key decision you made along the way.',
-      ],
-      es: [
-        'Reemplaza esto con una breve descripción del proyecto: para quién fue, qué problema resolvió, y tu rol.',
-        'Agrega un segundo párrafo sobre el proceso o una decisión clave que tomaste en el camino.',
-      ],
-    },
-    gallery: [
-      { color: 'bg-rust', alt: { en: 'Placeholder gallery image 1', es: 'Imagen de galería de ejemplo 1' } },
-      { color: 'bg-terracotta', alt: { en: 'Placeholder gallery image 2', es: 'Imagen de galería de ejemplo 2' } },
-      { color: 'bg-clay', alt: { en: 'Placeholder gallery image 3', es: 'Imagen de galería de ejemplo 3' } },
-      { color: 'bg-espresso', alt: { en: 'Placeholder gallery image 4', es: 'Imagen de galería de ejemplo 4' } },
-    ],
-    summary: {
-      en: 'Replace with a closing reflection on what this project taught you.',
-      es: 'Reemplaza con una reflexión final sobre lo que este proyecto te enseñó.',
-    },
-  },
 ]
 
 export const getProjectBySlug = (slug: string) => projects.find((p) => p.slug === slug)

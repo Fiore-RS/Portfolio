@@ -29,7 +29,7 @@ export default function AllProjects() {
         </div>
         <Link
           to="/"
-          className="rounded-full bg-accent-400 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-accent-600"
+          className="self-start rounded-full bg-accent-400 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-accent-600"
         >
           {t(ui.allProjectsPage.goBack)}
         </Link>

@@ -22,4 +22,6 @@ export interface Project {
   overview: { en: string[]; es: string[] }
   gallery: { color: string; image?: string; alt: Localized }[]
   summary: Localized
+  /** Optional downloadable document (e.g. a brand manual PDF) shown as a button on the project page. */
+  pdf?: { path: string; label: Localized }
 }

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Navigate, useParams, Link } from 'react-router-dom'
+import { FileDown } from 'lucide-react'
 import { getProjectBySlug, projects } from '../data/projects'
 import { ui, useTranslations } from '../i18n/translations'
 import ImageLightbox from '../components/ImageLightbox'
@@ -65,6 +66,18 @@ export default function ProjectDetail() {
               <dd className="font-semibold text-ink">{t(project.tools)}</dd>
             </div>
           </dl>
+
+          {project.pdf && (
+            <a
+              href={assetUrl(project.pdf.path)}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-6 flex items-center justify-center gap-2 rounded-2xl bg-accent-400 px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-600"
+            >
+              <FileDown size={18} />
+              {t(project.pdf.label)}
+            </a>
+          )}
         </aside>
       </section>
 

@@ -59,6 +59,7 @@ export const projects: Project[] = [
     type: { en: 'Brand Manual & Identity', es: 'Manual de Marca e Identidad' },
     category: 'Graphic Design',
     cardColor: 'bg-clay',
+    image: '/projects/pycon-latam-2025/cover.png',
     timeline: { en: '3 weeks', es: '3 semanas' },
     role: { en: 'Freelance Brand Designer', es: 'Diseñadora de Marca Freelance' },
     tools: { en: 'Figma, Adobe Creative Cloud', es: 'Figma, Adobe Creative Cloud' },
@@ -75,27 +76,32 @@ export const projects: Project[] = [
     gallery: [
       {
         color: 'bg-clay',
-        alt: { en: 'PyCon LATAM 2025 event signage', es: 'Señalización del evento PyCon LATAM 2025' },
+        image: '/projects/pycon-latam-2025/logo-grid.png',
+        alt: { en: 'PyCon LATAM 2025 imagotype construction grid', es: 'Retícula de construcción del imagotipo de PyCon LATAM 2025' },
       },
       {
         color: 'bg-rust',
-        alt: { en: 'PyCon LATAM 2025 staff shirts and caps', es: 'Camisetas y gorras de staff de PyCon LATAM 2025' },
+        image: '/projects/pycon-latam-2025/monochrome.png',
+        alt: { en: 'PyCon LATAM 2025 monochrome logo version', es: 'Versión monocromática del logo de PyCon LATAM 2025' },
       },
       {
         color: 'bg-terracotta',
-        alt: {
-          en: 'PyCon LATAM 2025 keychains and rubber bracelets',
-          es: 'Llaveros y pulseras de goma de PyCon LATAM 2025',
-        },
+        image: '/projects/pycon-latam-2025/signage.png',
+        alt: { en: 'PyCon LATAM 2025 event signage', es: 'Señalización del evento PyCon LATAM 2025' },
       },
       {
         color: 'bg-espresso',
-        alt: { en: 'PyCon LATAM 2025 tote bags and water bottles', es: 'Bolsos de tela y botellas de agua de PyCon LATAM 2025' },
+        image: '/projects/pycon-latam-2025/staff-shirts.png',
+        alt: { en: 'PyCon LATAM 2025 staff shirts', es: 'Camisetas de staff de PyCon LATAM 2025' },
       },
     ],
     summary: {
       en: "My first freelance design project — and different from starting a brand from scratch. I had to work inside a logo and direction the team had already chosen, correct it, and extend it into a full manual and a set of physical applications, all while keeping it consistent enough to pass review before the event's August deadline.",
       es: 'Mi primer proyecto de diseño freelance — y distinto a crear una marca desde cero. Tuve que trabajar dentro de un logo y una dirección que el equipo ya había elegido, corregirlo, y extenderlo en un manual completo y un set de aplicaciones físicas, manteniendo la consistencia necesaria para pasar la revisión antes de la fecha límite de agosto.',
+    },
+    pdf: {
+      path: '/projects/pycon-latam-2025/brand-manual.pdf',
+      label: { en: 'View Brand Manual (PDF)', es: 'Ver Manual de Marca (PDF)' },
     },
   },
   {

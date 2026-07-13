@@ -1,34 +1,42 @@
-import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import { Link, NavLink } from 'react-router-dom'
+import { Menu, X } from 'lucide-react'
 import { useLanguage } from '../i18n/LanguageContext'
 import { ui, useTranslations } from '../i18n/translations'
 
 export default function Header() {
   const { t } = useTranslations()
   const { lang, toggleLang } = useLanguage()
+  const [mobileOpen, setMobileOpen] = useState(false)
 
   const navLinks = [
-    { label: t(ui.nav.work), to: '/#work' },
-    { label: t(ui.nav.about), to: '/#about' },
-    { label: t(ui.nav.contact), to: '/#contact' },
+    { label: t(ui.nav.allProjects), to: '/work' },
+    { label: t(ui.nav.hireMe), to: '/hire' },
   ]
 
   return (
     <header className="bg-paper sticky top-0 z-40">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link to="/" className="font-display text-xl font-bold text-accent-600">
+        <Link to="/" className="font-display text-xl font-bold text-accent-600" onClick={() => setMobileOpen(false)}>
           Portfolio
         </Link>
 
-        <nav className="hidden gap-8 font-body text-sm font-medium text-ink md:flex" aria-label="Primary">
+        <nav className="hidden gap-8 font-body text-base font-medium text-ink md:flex" aria-label="Primary">
           {navLinks.map((link) => (
-            <Link key={link.to} to={link.to} className="transition-colors hover:text-accent-600">
+            <NavLink
+              key={link.to}
+              to={link.to}
+              className={({ isActive }) =>
+                `transition-colors hover:text-accent-600 ${isActive ? 'text-accent-600' : ''}`
+              }
+            >
               {link.label}
-            </Link>
+            </NavLink>
           ))}
         </nav>
 
         <div className="flex items-center gap-3">
-          {/* Language toggle */}
+          {/* Language toggle — stands alone in the corner */}
           <button
             type="button"
             onClick={toggleLang}
@@ -51,17 +59,41 @@ export default function Header() {
             </span>
           </button>
 
-          {/* "Hire Me" reads well for freelance-facing portfolios. If this site is
-              mainly for school/personal projects, swap the label for something
-              lower-pressure like "Contact". */}
-          <Link
-            to="/hire"
-            className="rounded-2xl bg-accent-400 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-accent-600"
+          {/* Hamburger — mobile only */}
+          <button
+            type="button"
+            onClick={() => setMobileOpen((prev) => !prev)}
+            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileOpen}
+            className="flex h-9 w-9 items-center justify-center rounded-full text-ink md:hidden"
           >
-            {t(ui.nav.hireMe)}
-          </Link>
+            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile nav panel */}
+      {mobileOpen && (
+        <nav
+          className="flex flex-col gap-1 border-t border-ink/10 px-6 py-4 font-body text-base font-medium text-ink md:hidden"
+          aria-label="Primary"
+        >
+          {navLinks.map((link) => (
+            <NavLink
+              key={link.to}
+              to={link.to}
+              onClick={() => setMobileOpen(false)}
+              className={({ isActive }) =>
+                `rounded-xl px-3 py-3 transition-colors hover:bg-accent-100 hover:text-accent-600 ${
+                  isActive ? 'text-accent-600' : ''
+                }`
+              }
+            >
+              {link.label}
+            </NavLink>
+          ))}
+        </nav>
+      )}
     </header>
   )
 }

@@ -138,7 +138,7 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="mx-auto max-w-4xl px-6 py-16 text-center">
+      <section className="mx-auto max-w-4xl px-6 pb-16 pt-[7.5rem] text-center">
         <span className="inline-block rounded-full bg-accent-100 px-3.5 py-1 text-xs font-medium text-accent-600">
           {t(ui.hero.badge)}
         </span>
@@ -173,7 +173,7 @@ export default function Home() {
       </section>
 
       {/* Selected work */}
-      <section id="work" className="mx-auto max-w-6xl scroll-mt-24 px-6 pb-16 pt-0">
+      <section id="work" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-16">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <h2 className="text-4xl font-bold">

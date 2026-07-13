@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import type { Project } from '../data/types'
 import { useTranslations } from '../i18n/translations'
+import { assetUrl } from '../lib/assetUrl'
 
 interface ProjectCardProps {
   project: Project
@@ -13,14 +14,14 @@ export default function ProjectCard({ project, size = 'default' }: ProjectCardPr
   return (
     <Link
       to={`/work/${project.slug}`}
-      className={`group relative block h-full overflow-hidden rounded-3xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-600 ${
+      className={`group relative block h-full overflow-hidden rounded-3xl border-2 border-accent-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-600 ${
         size === 'large' ? 'min-h-[440px]' : 'min-h-[210px]'
       }`}
     >
       {/* Background: real cover image if provided, otherwise the flat brand color */}
       {project.image ? (
         <img
-          src={project.image}
+          src={assetUrl(project.image)}
           alt=""
           className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />

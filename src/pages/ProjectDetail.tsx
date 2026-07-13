@@ -1,11 +1,15 @@
+import { useState } from 'react'
 import { Navigate, useParams, Link } from 'react-router-dom'
 import { getProjectBySlug, projects } from '../data/projects'
 import { ui, useTranslations } from '../i18n/translations'
+import ImageLightbox from '../components/ImageLightbox'
+import { assetUrl } from '../lib/assetUrl'
 
 export default function ProjectDetail() {
   const { t, tArr } = useTranslations()
   const { slug } = useParams<{ slug: string }>()
   const project = getProjectBySlug(slug ?? '')
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null)
 
   if (!project) return <Navigate to="/work" replace />
 
@@ -16,20 +20,24 @@ export default function ProjectDetail() {
   return (
     <>
       {/* Hero */}
-      <section className={`relative flex min-h-[420px] items-end ${project.cardColor}`}>
+      <section
+        className={`relative flex min-h-[420px] items-end ${project.cardColor} ${
+          project.image ? 'cursor-zoom-in' : ''
+        }`}
+        onClick={() => project.image && setLightbox({ src: assetUrl(project.image)!, alt: t(project.title) })}
+      >
         {project.image && (
-          <img src={project.image} alt="" className="absolute inset-0 h-full w-full object-cover" />
+          <img src={assetUrl(project.image)} alt="" className="absolute inset-0 h-full w-full object-cover" />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-black/0" />
-        <div className="relative mx-auto w-full max-w-6xl px-6 py-14 text-white">
+        <div className="relative mx-auto w-full max-w-6xl px-6 py-14">
           <p className="text-sm font-medium text-white/80">{t(project.type)}</p>
-          <h1 className="mt-2 font-display text-5xl font-extrabold">{t(project.title)}</h1>
-          <p className="mt-4 max-w-xl text-white/90">{overview[0]}</p>
+          <h1 className="mt-2 font-display text-5xl font-extrabold text-white">{t(project.title)}</h1>
         </div>
       </section>
 
       {/* Overview + details */}
-      <section className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-[1fr_320px]">
+      <section className="mx-auto grid max-w-6xl gap-10 px-6 pb-8 pt-16 md:grid-cols-[1fr_320px]">
         <div>
           <h2 className="text-3xl font-bold">
             {t(ui.projectDetail.overview)} <span className="text-accent-500">{t(ui.projectDetail.overviewHighlight)}</span>
@@ -61,17 +69,26 @@ export default function ProjectDetail() {
       </section>
 
       {/* Gallery */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
+      <section className="mx-auto max-w-6xl px-6 pb-16 pt-8">
         <h2 className="text-3xl font-bold">
           {t(ui.projectDetail.closeLook)} <span className="text-accent-500">{t(ui.projectDetail.closeLookHighlight)}</span>
         </h2>
         <div className="mt-8 grid gap-5 sm:grid-cols-2">
           {project.gallery.map((item, i) => (
-            <div key={i} className={`aspect-[4/3] rounded-3xl ${item.color}`} role="img" aria-label={t(item.alt)}>
+            <button
+              key={i}
+              type="button"
+              onClick={() => item.image && setLightbox({ src: assetUrl(item.image)!, alt: t(item.alt) })}
+              disabled={!item.image}
+              className={`aspect-[4/3] overflow-hidden rounded-3xl border-2 border-accent-500 ${item.color} ${
+                item.image ? 'cursor-zoom-in transition-transform hover:scale-[1.02]' : ''
+              }`}
+              aria-label={t(item.alt)}
+            >
               {item.image && (
-                <img src={item.image} alt={t(item.alt)} className="h-full w-full rounded-3xl object-cover" />
+                <img src={assetUrl(item.image)} alt={t(item.alt)} className="h-full w-full object-cover" />
               )}
-            </div>
+            </button>
           ))}
         </div>
       </section>
@@ -94,6 +111,8 @@ export default function ProjectDetail() {
           {t(ui.projectDetail.nextProject)}
         </Link>
       </div>
+
+      {lightbox && <ImageLightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />}
     </>
   )
 }

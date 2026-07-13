@@ -11,6 +11,7 @@ export const projects: Project[] = [
     type: { en: 'Web App', es: 'Aplicación Web' },
     category: 'UX/UI Design',
     cardColor: 'bg-terracotta',
+    image: '/projects/reading-journal/cover.png',
     timeline: { en: '2 weeks', es: '2 semanas' },
     role: { en: 'Solo Designer & Developer', es: 'Diseñadora y Desarrolladora Única' },
     tools: { en: 'React, Tailwind, Express, Drizzle, Neon', es: 'React, Tailwind, Express, Drizzle, Neon' },
@@ -27,16 +28,23 @@ export const projects: Project[] = [
     gallery: [
       {
         color: 'bg-terracotta',
+        image: '/projects/reading-journal/library.png',
         alt: { en: 'Reading Journal library grid view', es: 'Vista de cuadrícula de la biblioteca de Reading Journal' },
       },
-      { color: 'bg-clay', alt: { en: 'Reading Journal stats page', es: 'Página de estadísticas de Reading Journal' } },
+      {
+        color: 'bg-clay',
+        image: '/projects/reading-journal/stats.png',
+        alt: { en: 'Reading Journal stats page', es: 'Página de estadísticas de Reading Journal' },
+      },
       {
         color: 'bg-espresso',
-        alt: { en: 'Reading Journal currently-reading carousel', es: 'Carrusel de lectura actual de Reading Journal' },
+        image: '/projects/reading-journal/reading.png',
+        alt: { en: 'Reading Journal reading progress view', es: 'Vista de progreso de lectura de Reading Journal' },
       },
       {
         color: 'bg-rust',
-        alt: { en: 'Reading Journal book detail page', es: 'Página de detalle de libro de Reading Journal' },
+        image: '/projects/reading-journal/signin.png',
+        alt: { en: 'Reading Journal sign in page', es: 'Página de inicio de sesión de Reading Journal' },
       },
     ],
     summary: {

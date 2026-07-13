@@ -95,6 +95,52 @@ export const projects: Project[] = [
     ],
     summary: 'Replace with a closing reflection on what this project taught you.',
   },
+  {
+    id: '5',
+    slug: 'happy-home',
+    title: 'Happy Home',
+    type: 'Logo & Brand Identity',
+    category: 'Graphic Design',
+    cardColor: 'bg-terracotta',
+    timeline: '1 week',
+    role: 'Freelance Graphic Designer',
+    tools: 'Figma, Adobe Creative Cloud',
+    overview: [
+      'Happy Home rents rooms to exchange students in Costa Rica. The business already had a logo, but wanted something more iconic and distinctly their own — an identity that could hold up as they started marketing to an international audience.',
+      'The new mark is an icon + wordmark logo built around a simple idea: a happy face shaped like a house. Alongside the logo, I designed functional keychains carrying the mark, made for the actual room keys tenants use day to day.',
+    ],
+    gallery: [
+      { color: 'bg-terracotta', alt: 'Happy Home logo icon exploration' },
+      { color: 'bg-clay', alt: 'Happy Home full logo lockup' },
+      { color: 'bg-espresso', alt: 'Happy Home room key keychain mockups' },
+      { color: 'bg-rust', alt: 'Happy Home logo usage examples' },
+    ],
+    summary:
+      'A short, paid freelance turnaround taught me to move fast without losing the client\'s input — a one-week timeline meant getting the icon concept right early, since there wasn\'t room for many rounds of revisions.',
+  },
+  {
+    id: '6',
+    slug: 'hack-gb',
+    title: 'Hack GB',
+    type: 'Event Branding',
+    category: 'Graphic Design',
+    cardColor: 'bg-rust',
+    timeline: '1 week',
+    role: 'Design Team Support',
+    tools: 'Figma, Adobe Creative Cloud, Medibang Paint',
+    overview: [
+      "HackGB is the University of Wisconsin-Green Bay's collegiate hackathon, a 24-hour weekend bringing together developers, hardware engineers, and designers. The event's design team needed the logo finished fast — they were about to launch their sponsor outreach campaign and couldn't wait.",
+      "The mark centers on a phoenix, referencing UW-Green Bay's own mascot and school spirit, paired with the \"Hack GB\" wordmark. With sponsorship materials on a tight deadline, the priority was landing a strong, recognizable symbol in one week rather than exploring dozens of directions.",
+    ],
+    gallery: [
+      { color: 'bg-rust', alt: 'Hack GB phoenix logo icon' },
+      { color: 'bg-terracotta', alt: 'Hack GB full logo lockup' },
+      { color: 'bg-clay', alt: 'Hack GB logo color variations' },
+      { color: 'bg-espresso', alt: 'Hack GB sponsor deck applications' },
+    ],
+    summary:
+      "Designing under a hard sponsor-outreach deadline meant trusting my first strong direction instead of iterating endlessly — a good exercise in delivering a clear, symbolic mark (the phoenix) quickly for a team I'd never worked with before.",
+  },
 ]
 
 export const getProjectBySlug = (slug: string) => projects.find((p) => p.slug === slug)

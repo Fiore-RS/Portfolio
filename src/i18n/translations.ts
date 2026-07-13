@@ -131,7 +131,7 @@ export const ui = {
   footer: {
     tagline: { en: 'Personal Portfolio.', es: 'Portafolio Personal.' },
   },
-} as const
+}
 
 export function useTranslations() {
   const { lang } = useLanguage()

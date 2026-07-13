@@ -26,11 +26,11 @@ const webPackages: Package[] = [
     },
   },
   {
-    name: { en: 'Full-Stack Web App', es: 'App Web Full-Stack' },
-    price: '$700',
+    name: { en: 'Small Full-Stack App', es: 'App Full-Stack (Escala Pequeña)' },
+    price: '$500',
     description: {
-      en: 'Custom frontend + backend, database, authentication, and deployment — like Reading Journal.',
-      es: 'Frontend + backend a medida, base de datos, autenticación y despliegue — como Reading Journal.',
+      en: 'Personal tools, trackers, or small platforms with auth and a database — like Reading Journal. Does not cover large-scale apps (e-commerce, payments, AI chat features, etc.).',
+      es: 'Herramientas personales, rastreadores o plataformas pequeñas con autenticación y base de datos — como Reading Journal. No incluye aplicaciones a gran escala (compras en línea, pagos, chats de asistente con IA, etc.).',
     },
   },
 ]
@@ -104,7 +104,7 @@ export default function Hire() {
   const { t } = useTranslations()
 
   return (
-    <section className="mx-auto max-w-4xl px-6 py-16">
+    <section className="mx-auto max-w-6xl px-6 py-16">
       <h1 className="text-4xl font-bold">
         {t(ui.hire.heading)} <span className="text-accent-500">{t(ui.hire.headingHighlight)}</span>
       </h1>

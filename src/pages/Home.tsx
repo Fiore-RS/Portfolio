@@ -138,45 +138,42 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="mx-auto grid max-w-6xl gap-12 px-6 pb-16 pt-8 md:grid-cols-[1.15fr_1fr] md:items-center md:pb-24 md:pt-12">
-        <div>
-          <span className="inline-block rounded-full bg-accent-100 px-3.5 py-1 text-xs font-medium text-accent-600">
-            {t(ui.hero.badge)}
-          </span>
-          <h1 className="mt-6 font-display text-[2.75rem] font-extrabold leading-[1.15] text-ink md:text-5xl">
-            {t(ui.hero.titleStart)} <span className="text-accent-500">{t(ui.hero.titleHighlight)}</span>
-          </h1>
-          <p className="mt-6 max-w-lg text-body">{t(ui.hero.body)}</p>
-          <div className="mt-8 flex gap-4">
-            <Link
-              to="/#work"
-              className="rounded-2xl bg-accent-400 px-6 py-3 font-semibold text-white transition-colors hover:bg-accent-600"
-            >
-              {t(ui.hero.viewWork)}
-            </Link>
-            <Link
-              to="/#about"
-              className="rounded-2xl border border-ink/20 px-6 py-3 font-semibold text-ink transition-colors hover:border-ink/40"
-            >
-              {t(ui.hero.aboutMe)}
-            </Link>
-          </div>
+      <section className="mx-auto max-w-3xl px-6 pb-16 pt-16 text-center md:pb-24">
+        <span className="inline-block rounded-full bg-accent-100 px-3.5 py-1 text-xs font-medium text-accent-600">
+          {t(ui.hero.badge)}
+        </span>
+        <h1 className="mx-auto mt-6 max-w-2xl font-display text-[2.75rem] font-extrabold leading-[1.15] text-ink md:text-5xl">
+          {t(ui.hero.titleStart)} <span className="text-accent-500">{t(ui.hero.titleHighlight)}</span>
+        </h1>
+        <p className="mx-auto mt-6 max-w-lg text-body">{t(ui.hero.body)}</p>
+        <div className="mt-8 flex justify-center gap-4">
+          <Link
+            to="/#work"
+            className="rounded-2xl bg-accent-400 px-6 py-3 font-semibold text-white transition-colors hover:bg-accent-600"
+          >
+            {t(ui.hero.viewWork)}
+          </Link>
+          <Link
+            to="/#about"
+            className="rounded-2xl border border-ink/20 px-6 py-3 font-semibold text-ink transition-colors hover:border-ink/40"
+          >
+            {t(ui.hero.aboutMe)}
+          </Link>
         </div>
 
-        {/* Photo panel: clay frame with the portrait inset on all sides
-            (more breathing room top/bottom than left/right). Swap the src
-            for your own photo when ready. */}
-        <div className="relative aspect-[4/5] w-full max-w-md overflow-hidden rounded-[2.75rem] bg-clay px-10 py-14 md:justify-self-end md:px-12 md:py-16">
-          <img
-            src="https://i.pinimg.com/originals/24/66/a1/2466a17b21e6371ebc7a83ee36f6150e.jpg"
-            alt="Portrait placeholder — reading a book"
-            className="h-full w-full rounded-[2rem] object-cover"
-          />
+        <div className="mt-10 inline-flex flex-wrap items-center justify-center gap-3 rounded-full bg-accent-100 px-6 py-3 text-sm font-medium text-accent-600">
+          <span>
+            {projects.length}+ {t(ui.hero.statsProjects)}
+          </span>
+          <span className="h-1 w-1 rounded-full bg-accent-400" aria-hidden="true" />
+          <span>{t(ui.hero.statsDisciplines)}</span>
+          <span className="h-1 w-1 rounded-full bg-accent-400" aria-hidden="true" />
+          <span>{t(ui.hero.statsLocation)}</span>
         </div>
       </section>
 
       {/* Selected work */}
-      <section id="work" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-16">
+      <section id="work" className="mx-auto max-w-6xl scroll-mt-24 px-6 pb-16 pt-0">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <h2 className="text-4xl font-bold">
@@ -264,12 +261,7 @@ export default function Home() {
 
       {/* Connect */}
       <section id="contact" className="mx-auto max-w-3xl scroll-mt-24 px-6 py-16 text-center">
-        <img
-          src="https://i.pinimg.com/originals/24/66/a1/2466a17b21e6371ebc7a83ee36f6150e.jpg"
-          alt="Portrait placeholder"
-          className="mx-auto h-20 w-20 rounded-full object-cover"
-        />
-        <h2 className="mt-6 text-4xl font-bold">{t(ui.connect.heading)}</h2>
+        <h2 className="text-4xl font-bold">{t(ui.connect.heading)}</h2>
         <p className="mx-auto mt-3 max-w-md text-body">{t(ui.connect.subtitle)}</p>
 
         <div className="mt-8 space-y-3 text-left">

@@ -17,6 +17,9 @@ export const ui = {
     },
     viewWork: { en: 'View My Work →', es: 'Ver Mi Trabajo →' },
     aboutMe: { en: 'About Me', es: 'Sobre Mí' },
+    statsProjects: { en: 'Projects', es: 'Proyectos' },
+    statsDisciplines: { en: 'UX/UI & Graphic Design', es: 'UX/UI y Diseño Gráfico' },
+    statsLocation: { en: 'Costa Rica', es: 'Costa Rica' },
   },
   work: {
     heading: { en: 'Selected', es: 'Trabajo' },

@@ -111,6 +111,7 @@ export const projects: Project[] = [
     type: { en: 'Brand Identity & Mascot', es: 'Identidad de Marca y Mascota' },
     category: 'Graphic Design',
     cardColor: 'bg-espresso',
+    image: '/projects/pixmatic-studios/cover.png',
     timeline: { en: '6 weeks', es: '6 semanas' },
     role: { en: 'Personal Project — Solo Designer', es: 'Proyecto Personal — Diseñadora Única' },
     tools: {
@@ -130,19 +131,23 @@ export const projects: Project[] = [
     gallery: [
       {
         color: 'bg-espresso',
+        image: '/projects/pixmatic-studios/logo-colors.png',
         alt: { en: 'Pixmatic Studios logo color variations', es: 'Variaciones de color del logo de Pixmatic Studios' },
       },
       {
         color: 'bg-rust',
+        image: '/projects/pixmatic-studios/logo-formats.png',
         alt: { en: 'Pixmatic Studios logo formats and usage', es: 'Formatos y usos del logo de Pixmatic Studios' },
       },
       {
         color: 'bg-clay',
+        image: '/projects/pixmatic-studios/mascot-coco.png',
         alt: { en: 'Coco the sloth mascot character design', es: 'Diseño del personaje Coco, la mascota perezoso' },
       },
       {
         color: 'bg-terracotta',
-        alt: { en: 'Pixmatic Studios brand applications', es: 'Aplicaciones de marca de Pixmatic Studios' },
+        image: '/projects/pixmatic-studios/icon-colors.png',
+        alt: { en: 'Pixmatic Studios icon color variations', es: 'Variaciones de color del ícono de Pixmatic Studios' },
       },
     ],
     summary: {
@@ -157,6 +162,7 @@ export const projects: Project[] = [
     type: { en: 'Logo & Brand Identity', es: 'Logo e Identidad de Marca' },
     category: 'Graphic Design',
     cardColor: 'bg-terracotta',
+    image: '/projects/happy-home/cover.png',
     timeline: { en: '1 week', es: '1 semana' },
     role: { en: 'Freelance Graphic Designer', es: 'Diseñadora Gráfica Freelance' },
     tools: { en: 'Figma, Adobe Creative Cloud', es: 'Figma, Adobe Creative Cloud' },
@@ -173,14 +179,24 @@ export const projects: Project[] = [
     gallery: [
       {
         color: 'bg-terracotta',
-        alt: { en: 'Happy Home logo icon exploration', es: 'Exploración del ícono del logo de Happy Home' },
+        image: '/projects/happy-home/logo-lockup.png',
+        alt: { en: 'Happy Home logo and icon lockup', es: 'Logo e ícono de Happy Home' },
       },
-      { color: 'bg-clay', alt: { en: 'Happy Home full logo lockup', es: 'Logotipo completo de Happy Home' } },
+      {
+        color: 'bg-clay',
+        image: '/projects/happy-home/icon-colors.png',
+        alt: { en: 'Happy Home icon color variations', es: 'Variaciones de color del ícono de Happy Home' },
+      },
       {
         color: 'bg-espresso',
+        image: '/projects/happy-home/logo-colors.png',
+        alt: { en: 'Happy Home full logo color variations', es: 'Variaciones de color del logo completo de Happy Home' },
+      },
+      {
+        color: 'bg-rust',
+        image: '/projects/happy-home/keychains.png',
         alt: { en: 'Happy Home room key keychain mockups', es: 'Mockups de llaveros de llaves de Happy Home' },
       },
-      { color: 'bg-rust', alt: { en: 'Happy Home logo usage examples', es: 'Ejemplos de uso del logo de Happy Home' } },
     ],
     summary: {
       en: "A short, paid freelance turnaround taught me to move fast without losing the client's input — a one-week timeline meant getting the icon concept right early, since there wasn't room for many rounds of revisions.",

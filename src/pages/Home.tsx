@@ -197,7 +197,7 @@ export default function Home() {
       </section>
 
       {/* Craft & Tools */}
-      <section id="about" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-16">
+      <section id="about" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-12">
         <h2 className="text-4xl font-bold">
           {t(ui.craftTools.heading)} <span className="text-accent-500">{t(ui.craftTools.headingHighlight)}</span>
         </h2>

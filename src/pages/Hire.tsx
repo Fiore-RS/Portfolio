@@ -29,8 +29,8 @@ const webPackages: Package[] = [
     name: { en: 'Small Full-Stack App', es: 'App Full-Stack (Escala Pequeña)' },
     price: '$500',
     description: {
-      en: 'Personal tools, trackers, or small platforms with auth and a database — like Reading Journal. Does not cover large-scale apps (e-commerce, payments, AI chat features, etc.).',
-      es: 'Herramientas personales, rastreadores o plataformas pequeñas con autenticación y base de datos — como Reading Journal. No incluye aplicaciones a gran escala (compras en línea, pagos, chats de asistente con IA, etc.).',
+      en: 'Personal tools, trackers, or small platforms with auth and a database, like Reading Journal. Does not cover large-scale apps (e-commerce, payments, AI chat features, etc.).',
+      es: 'Herramientas personales, rastreadores o plataformas pequeñas con autenticación y base de datos, como Reading Journal. No incluye aplicaciones a gran escala (compras en línea, pagos, chats de asistente con IA, etc.).',
     },
   },
 ]
@@ -48,8 +48,8 @@ const graphicPackages: Package[] = [
     name: { en: 'Logo + Brand Manual', es: 'Logo + Manual de Marca' },
     price: '$180',
     description: {
-      en: 'Logo plus a brand guide: color palette, typography, and usage rules — like PyCon LATAM 2025.',
-      es: 'Logo más una guía de marca: paleta de colores, tipografía, y reglas de uso — como PyCon LATAM 2025.',
+      en: 'Logo plus a brand guide: color palette, typography, and usage rules, like PyCon LATAM 2025.',
+      es: 'Logo más una guía de marca: paleta de colores, tipografía, y reglas de uso, como PyCon LATAM 2025.',
     },
   },
   {
@@ -104,7 +104,7 @@ export default function Hire() {
   const { t } = useTranslations()
 
   return (
-    <section className="mx-auto max-w-6xl px-6 py-16">
+    <section className="mx-auto max-w-6xl px-6 py-16 pt-[7.5rem]">
       <h1 className="text-4xl font-bold">
         {t(ui.hire.heading)} <span className="text-accent-500">{t(ui.hire.headingHighlight)}</span>
       </h1>
@@ -156,13 +156,13 @@ export default function Hire() {
       </div>
 
       {/* Pricing */}
-      <div className="mt-12">
-        <h2 className="text-2xl font-bold">
+      <div className="mt-16">
+        <h2 className="text-4xl font-bold">
           {t(ui.hire.pricingHeading)} <span className="text-accent-500">{t(ui.hire.pricingHeadingHighlight)}</span>
         </h2>
         <p className="mt-2 max-w-xl text-sm text-body">{t(ui.hire.pricingSubtitle)}</p>
 
-        <h3 className="mt-8 text-lg font-bold text-ink">{t(ui.hire.webPackagesHeading)}</h3>
+        <h3 className="mt-8 text-2xl font-bold text-ink">{t(ui.hire.webPackagesHeading)}</h3>
         <div className="mt-4 grid gap-5 md:grid-cols-3">
           {webPackages.map((pkg) => (
             <div key={t(pkg.name)} className="rounded-2xl bg-paper p-6 shadow-sm">
@@ -173,7 +173,7 @@ export default function Hire() {
           ))}
         </div>
 
-        <h3 className="mt-10 text-lg font-bold text-ink">{t(ui.hire.graphicPackagesHeading)}</h3>
+        <h3 className="mt-10 text-2xl font-bold text-ink">{t(ui.hire.graphicPackagesHeading)}</h3>
         <div className="mt-4 grid gap-5 md:grid-cols-3">
           {graphicPackages.map((pkg) => (
             <div key={t(pkg.name)} className="rounded-2xl bg-paper p-6 shadow-sm">
@@ -188,8 +188,8 @@ export default function Hire() {
       </div>
 
       {/* Terms of Service */}
-      <div className="mt-12">
-        <h2 className="text-2xl font-bold">
+      <div className="mt-16">
+        <h2 className="text-4xl font-bold">
           {t(ui.hire.termsHeading)} <span className="text-accent-500">{t(ui.hire.termsHeadingHighlight)}</span>
         </h2>
         <p className="mt-2 max-w-xl text-sm text-body">{t(ui.hire.termsSubtitle)}</p>

@@ -48,8 +48,8 @@ export const projects: Project[] = [
       },
     ],
     summary: {
-      en: 'This was my first end-to-end deploy of a full-stack app I designed myself — the sage-green system and the auth flow taught me as much about DevOps as about UI.',
-      es: 'Este fue mi primer despliegue completo de una app full-stack diseñada por mí misma — el sistema verde salvia y el flujo de autenticación me enseñaron tanto de DevOps como de UI.',
+      en: 'This was my first end-to-end deploy of a full-stack app I designed myself. The sage-green system and the auth flow taught me as much about DevOps as about UI.',
+      es: 'Este fue mi primer despliegue completo de una app full-stack diseñada por mí misma. El sistema verde salvia y el flujo de autenticación me enseñaron tanto de DevOps como de UI.',
     },
     liveUrl: {
       url: 'https://fiore-rs.github.io/ReadingJournal/',
@@ -69,11 +69,11 @@ export const projects: Project[] = [
     tools: { en: 'Figma, Adobe Creative Cloud', es: 'Figma, Adobe Creative Cloud' },
     overview: {
       en: [
-        "PyCon LATAM 2025 was a Python conference held in Costa Rica at the Universidad de Costa Rica, Sede del Pacífico — my own campus — in August 2025. The event's design and advertising team needed extra support, and a friend already on the team recommended me as a freelance collaborator.",
+        "PyCon LATAM 2025 was a Python conference held in Costa Rica at the Universidad de Costa Rica, Sede del Pacífico (my own campus) in August 2025. The event's design and advertising team needed extra support, and a friend already on the team recommended me as a freelance collaborator.",
         'My job was to take the existing logo and finalize it for official event use, then build out the complete brand manual: brand essence, imagotype construction, usage rules, and identity applications. My design professor, Verónica Solano, supervised the process and signed off on the final manual.',
       ],
       es: [
-        'PyCon LATAM 2025 fue un evento de Python en Costa Rica realizado en la Universidad de Costa Rica, Sede del Pacífico —mi propia sede como estudiante activa— en agosto de 2025. El equipo de diseño y publicidad del evento necesitaba apoyo, y una amistad que ya era parte del equipo me recomendó como colaboradora freelance.',
+        'PyCon LATAM 2025 fue un evento de Python en Costa Rica realizado en la Universidad de Costa Rica, Sede del Pacífico (mi propia sede como estudiante activa) en agosto de 2025. El equipo de diseño y publicidad del evento necesitaba apoyo, y una amistad que ya era parte del equipo me recomendó como colaboradora freelance.',
         'Mi labor fue corregir el logo existente y darle los ajustes finales para su uso oficial en el evento, y luego construir el manual de marca completo: esencia de la marca, construcción del imagotipo, usos de la marca, y aplicaciones de identidad. Mi profesora de diseño, Verónica Solano, supervisó el proceso y dio luz verde al manual final.',
       ],
     },
@@ -100,8 +100,8 @@ export const projects: Project[] = [
       },
     ],
     summary: {
-      en: "My first freelance design project — and different from starting a brand from scratch. I had to work inside a logo and direction the team had already chosen, correct it, and extend it into a full manual and a set of physical applications, all while keeping it consistent enough to pass review before the event's August deadline.",
-      es: 'Mi primer proyecto de diseño freelance — y distinto a crear una marca desde cero. Tuve que trabajar dentro de un logo y una dirección que el equipo ya había elegido, corregirlo, y extenderlo en un manual completo y un set de aplicaciones físicas, manteniendo la consistencia necesaria para pasar la revisión antes de la fecha límite de agosto.',
+      en: "My first freelance design project, and different from starting a brand from scratch. I had to work inside a logo and direction the team had already chosen, correct it, and extend it into a full manual and a set of physical applications, all while keeping it consistent enough to pass review before the event's August deadline.",
+      es: 'Mi primer proyecto de diseño freelance, y distinto a crear una marca desde cero. Tuve que trabajar dentro de un logo y una dirección que el equipo ya había elegido, corregirlo, y extenderlo en un manual completo y un set de aplicaciones físicas, manteniendo la consistencia necesaria para pasar la revisión antes de la fecha límite de agosto.',
     },
     pdf: {
       path: '/projects/pycon-latam-2025/brand-manual.pdf',
@@ -124,12 +124,12 @@ export const projects: Project[] = [
     },
     overview: {
       en: [
-        'A personal passion project imagining what it would be like to run my own 2D animation studio, in the spirit of Disney, DreamWorks, and Pixar — the name is a nod to the latter. The brief I set for myself: build the full identity for a fictional studio from the ground up.',
-        "The brand needed to feel like a familiar, polished animation house while staying warm and local, so the studio's mascot, Coco, is a playful, friendly three-toed sloth — a national symbol of Costa Rica — wearing a collar tag with a simplified variation of the logo. In the wordmark itself, the X in PIXMATIC becomes a four-pointed star with Coco's simplified face at its center, tying the mascot directly into the logotype.",
+        'A personal passion project imagining what it would be like to run my own 2D animation studio, in the spirit of Disney, DreamWorks, and Pixar; the name is a nod to the latter. The brief I set for myself: build the full identity for a fictional studio from the ground up.',
+        "The brand needed to feel like a familiar, polished animation house while staying warm and local, so the studio's mascot, Coco, is a playful, friendly three-toed sloth (a national symbol of Costa Rica) wearing a collar tag with a simplified variation of the logo. In the wordmark itself, the X in PIXMATIC becomes a four-pointed star with Coco's simplified face at its center, tying the mascot directly into the logotype.",
       ],
       es: [
-        'Un proyecto personal por diversión, imaginando cómo sería tener mi propio estudio de animación 2D al estilo Disney o DreamWorks — el nombre es un guiño a Pixar. El reto que me propuse: construir la identidad completa de un estudio ficticio desde cero.',
-        'La marca necesitaba transmitir un aire familiar al estilo Pixar, pero manteniendo calidez local, así que la mascota del estudio, Coco, es un perezoso juguetón y amigable — símbolo nacional de Costa Rica — que lleva un collar con una chapita con una variación simplificada del logo. En el logotipo, la X de PIXMATIC se convierte en una estrella de cuatro puntas con la carita simplificada de Coco en el centro, conectando la mascota directamente con el logotipo.',
+        'Un proyecto personal por diversión, imaginando cómo sería tener mi propio estudio de animación 2D al estilo Disney o DreamWorks; el nombre es un guiño a Pixar. El reto que me propuse: construir la identidad completa de un estudio ficticio desde cero.',
+        'La marca necesitaba transmitir un aire familiar al estilo Pixar, pero manteniendo calidez local, así que la mascota del estudio, Coco, es un perezoso juguetón y amigable (símbolo nacional de Costa Rica) que lleva un collar con una chapita con una variación simplificada del logo. En el logotipo, la X de PIXMATIC se convierte en una estrella de cuatro puntas con la carita simplificada de Coco en el centro, conectando la mascota directamente con el logotipo.',
       ],
     },
     gallery: [
@@ -155,8 +155,8 @@ export const projects: Project[] = [
       },
     ],
     summary: {
-      en: "Designing a full identity system and an original character at the same time pushed me to think about branding and illustration together — how a mascot's personality has to survive being simplified down into a single mark inside a logo, and how a playful character can still sit inside a disciplined brand system.",
-      es: 'Diseñar un sistema de identidad completo y un personaje original al mismo tiempo me hizo pensar en branding e ilustración de forma conjunta — cómo la personalidad de una mascota debe sobrevivir al simplificarse en una sola marca dentro de un logo, y cómo un personaje juguetón puede convivir dentro de un sistema de marca disciplinado.',
+      en: "Designing a full identity system and an original character at the same time pushed me to think about branding and illustration together, how a mascot's personality has to survive being simplified down into a single mark inside a logo, and how a playful character can still sit inside a disciplined brand system.",
+      es: 'Diseñar un sistema de identidad completo y un personaje original al mismo tiempo me hizo pensar en branding e ilustración de forma conjunta, cómo la personalidad de una mascota debe sobrevivir al simplificarse en una sola marca dentro de un logo, y cómo un personaje juguetón puede convivir dentro de un sistema de marca disciplinado.',
     },
   },
   {
@@ -172,11 +172,11 @@ export const projects: Project[] = [
     tools: { en: 'Figma, Adobe Creative Cloud', es: 'Figma, Adobe Creative Cloud' },
     overview: {
       en: [
-        'Happy Home rents rooms to exchange students in Costa Rica. The business already had a logo, but wanted something more iconic and distinctly their own — an identity that could hold up as they started marketing to an international audience.',
+        'Happy Home rents rooms to exchange students in Costa Rica. The business already had a logo, but wanted something more iconic and distinctly their own; an identity that could hold up as they started marketing to an international audience.',
         'The new mark is an icon + wordmark logo built around a simple idea: a happy face shaped like a house. Alongside the logo, I designed functional keychains carrying the mark, made for the actual room keys tenants use day to day.',
       ],
       es: [
-        'Happy Home alquila habitaciones a estudiantes de intercambio en Costa Rica. El negocio ya tenía un logo, pero querían algo más icónico y propio, una identidad que resistiera al empezar a promocionarse frente a una audiencia internacional.',
+        'Happy Home alquila habitaciones a estudiantes de intercambio en Costa Rica. El negocio ya tenía un logo, pero querían algo más icónico y propio; una identidad que resistiera al empezar a promocionarse frente a una audiencia internacional.',
         'La nueva marca es un logo de ícono + texto construido alrededor de una idea simple: una cara feliz con forma de casa. Junto al logo, diseñé llaveros funcionales con la marca, pensados para las llaves reales que los inquilinos usan día a día.',
       ],
     },
@@ -203,8 +203,8 @@ export const projects: Project[] = [
       },
     ],
     summary: {
-      en: "A short, paid freelance turnaround taught me to move fast without losing the client's input — a one-week timeline meant getting the icon concept right early, since there wasn't room for many rounds of revisions.",
-      es: 'Un proyecto freelance pagado y de entrega rápida me enseñó a avanzar rápido sin perder la retroalimentación del cliente — un plazo de una semana significó acertar con el concepto del ícono desde temprano, ya que no había espacio para muchas rondas de revisión.',
+      en: "A short, paid freelance turnaround taught me to move fast without losing the client's input. A one-week timeline meant getting the icon concept right early, since there wasn't room for many rounds of revisions.",
+      es: 'Un proyecto freelance pagado y de entrega rápida me enseñó a avanzar rápido sin perder la retroalimentación del cliente. Un plazo de una semana significó acertar con el concepto del ícono desde temprano, ya que no había espacio para muchas rondas de revisión.',
     },
   },
   {
@@ -223,11 +223,11 @@ export const projects: Project[] = [
     },
     overview: {
       en: [
-        "HackGB is the University of Wisconsin-Green Bay's collegiate hackathon, a 24-hour weekend bringing together developers, hardware engineers, and designers. The event's design team needed the logo finished fast — they were about to launch their sponsor outreach campaign and couldn't wait.",
+        "HackGB is the University of Wisconsin-Green Bay's collegiate hackathon, a 24-hour weekend bringing together developers, hardware engineers, and designers. The event's design team needed the logo finished fast; they were about to launch their sponsor outreach campaign and couldn't wait.",
         'The mark centers on a phoenix, referencing UW-Green Bay\'s own mascot and school spirit, paired with the "Hack GB" wordmark. With sponsorship materials on a tight deadline, the priority was landing a strong, recognizable symbol in one week rather than exploring dozens of directions.',
       ],
       es: [
-        'HackGB es el hackathon universitario de la Universidad de Wisconsin-Green Bay, un fin de semana de 24 horas que reúne a desarrolladores, ingenieros de hardware y diseñadores. El equipo de diseño del evento necesitaba el logo terminado rápido — estaban por lanzar su campaña de búsqueda de patrocinadores y no podían esperar.',
+        'HackGB es el hackathon universitario de la Universidad de Wisconsin-Green Bay, un fin de semana de 24 horas que reúne a desarrolladores, ingenieros de hardware y diseñadores. El equipo de diseño del evento necesitaba el logo terminado rápido; estaban por lanzar su campaña de búsqueda de patrocinadores y no podían esperar.',
         'La marca se centra en un fénix, en referencia a la mascota de UW-Green Bay, junto al texto "Hack GB". Con los materiales de patrocinio bajo una fecha límite ajustada, la prioridad fue lograr un símbolo fuerte y reconocible en una semana, en vez de explorar docenas de direcciones.',
       ],
     },
@@ -254,8 +254,8 @@ export const projects: Project[] = [
       },
     ],
     summary: {
-      en: "Designing under a hard sponsor-outreach deadline meant trusting my first strong direction instead of iterating endlessly — a good exercise in delivering a clear, symbolic mark (the phoenix) quickly for a team I'd never worked with before.",
-      es: 'Diseñar bajo una fecha límite estricta para la búsqueda de patrocinadores significó confiar en mi primera dirección fuerte en vez de iterar sin fin — un buen ejercicio para entregar rápido una marca clara y simbólica (el fénix) para un equipo con el que nunca había trabajado.',
+      en: "Designing under a hard sponsor-outreach deadline meant trusting my first strong direction instead of iterating endlessly. A good exercise in delivering a clear, symbolic mark (the phoenix) quickly for a team I'd never worked with before.",
+      es: 'Diseñar bajo una fecha límite estricta para la búsqueda de patrocinadores significó confiar en mi primera dirección fuerte en vez de iterar sin fin. Un buen ejercicio para entregar rápido una marca clara y simbólica (el fénix) para un equipo con el que nunca había trabajado.',
     },
   },
 ]

@@ -18,7 +18,7 @@ export default function AllProjects() {
   )
 
   return (
-    <section className="mx-auto max-w-6xl px-6 py-16">
+    <section className="mx-auto max-w-6xl px-6 py-16 pt-[7.5rem]">
       <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
         <div>
           <h1 className="text-4xl font-bold">

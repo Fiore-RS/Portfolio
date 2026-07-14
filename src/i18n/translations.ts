@@ -13,8 +13,8 @@ export const ui = {
     titleStart: { en: 'Crafting digital experiences with', es: 'Creando experiencias digitales con' },
     titleHighlight: { en: 'soul.', es: 'alma.' },
     body: {
-      en: 'I design digital and visual brand experiences — from UX/UI and full-stack web platforms to logos and brand identities.',
-      es: 'Diseño experiencias digitales y de marca visual — desde UX/UI y plataformas web full-stack hasta logos e identidades de marca.',
+      en: 'I design digital and visual brand experiences. From UX/UI and full-stack web platforms to logos and brand identities.',
+      es: 'Diseño experiencias digitales y de marca visual. Desde UX/UI y plataformas web full-stack hasta logos e identidades de marca.',
     },
     viewWork: { en: 'View My Work →', es: 'Ver Mi Trabajo →' },
     aboutMe: { en: 'About Me', es: 'Sobre Mí' },
@@ -115,8 +115,8 @@ export const ui = {
     pricingHeading: { en: 'Base', es: 'Precios' },
     pricingHeadingHighlight: { en: 'Pricing.', es: 'Base.' },
     pricingSubtitle: {
-      en: 'Starting prices for common project types. Final pricing depends on scope, timeline, and features — reach out for a quote tailored to your project.',
-      es: 'Precios iniciales para tipos de proyecto comunes. El precio final depende del alcance, tiempo y funcionalidades — contáctame para una cotización a la medida de tu proyecto.',
+      en: 'Starting prices for common project types. Final pricing depends on scope, timeline, and features. Reach out for a quote tailored to your project.',
+      es: 'Precios iniciales para tipos de proyecto comunes. El precio final depende del alcance, tiempo y funcionalidades. Contáctame para una cotización a la medida de tu proyecto.',
     },
     webPackagesHeading: { en: 'Web Design & Development', es: 'Diseño y Desarrollo Web' },
     graphicPackagesHeading: { en: 'Graphic Design & Branding', es: 'Diseño Gráfico y Branding' },
@@ -128,8 +128,8 @@ export const ui = {
     termsHeading: { en: 'Terms of', es: 'Términos de' },
     termsHeadingHighlight: { en: 'Service.', es: 'Servicio.' },
     termsSubtitle: {
-      en: 'A general summary of how I work — not a formal legal contract. For larger projects, a signed agreement will be provided.',
-      es: 'Un resumen general de cómo trabajo — no es un contrato legal formal. Para proyectos más grandes, se entregará un acuerdo firmado.',
+      en: 'A general summary of how I work, not a formal legal contract. For larger projects, a signed agreement will be provided.',
+      es: 'Un resumen general de cómo trabajo, no es un contrato legal formal. Para proyectos más grandes, se entregará un acuerdo firmado.',
     },
   },
   footer: {

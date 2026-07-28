@@ -66,8 +66,8 @@ interface ExperienceEntry {
 
 const experience: ExperienceEntry[] = [
   {
-    title: { en: 'Reading Journal', es: 'Reading Journal' },
-    years: '2025 - 2026',
+    title: { en: 'Reading Journal', es: 'Diario de Lectura' },
+    years: '2026',
     role: { en: 'Solo Designer & Developer', es: 'Diseñadora y Desarrolladora Única' },
     description: {
       en: 'Designed and shipped a full-stack reading tracker end to end, from prototype to deployment.',

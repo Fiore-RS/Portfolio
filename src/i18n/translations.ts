@@ -2,9 +2,6 @@ import { useLanguage } from './LanguageContext'
 
 export const ui = {
   nav: {
-    work: { en: 'Work', es: 'Trabajo' },
-    about: { en: 'About Me', es: 'Sobre Mí' },
-    contact: { en: 'Contact Me', es: 'Contáctame' },
     allProjects: { en: 'All My Projects', es: 'Todos Mis Proyectos' },
     hireMe: { en: 'Hire Me', es: 'Contrátame' },
   },

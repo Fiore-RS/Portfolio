@@ -1,4 +1,4 @@
-import { LayoutPanelLeft, Image as ImageIcon, Code2, Puzzle, Network, Images } from 'lucide-react'
+import { Image as Code2, Images } from 'lucide-react'
 import type { ComponentType } from 'react'
 
 interface ToolGroup {
@@ -11,22 +11,8 @@ interface ToolGroup {
 
 const tools: ToolGroup[] = [
   {
-    title: 'UX/UI Strategy',
-    items: ['User Research & Synthesis', 'Information Architecture', 'Interactive Prototyping'],
-    icon: LayoutPanelLeft,
-    iconBg: 'bg-accent-200',
-    iconColor: 'text-accent-600',
-  },
-  {
-    title: 'Visual Design',
-    items: ['Design Systems', 'Brand Identity & Logos', 'Typography & Color Theory'],
-    icon: ImageIcon,
-    iconBg: 'bg-terracotta/25',
-    iconColor: 'text-rust',
-  },
-  {
-    title: 'Frontend',
-    items: ['Semantic HTML & CSS', 'Tailwind & Modern CSS', 'React'],
+    title: 'Title',
+    items: ['001', '002', '003'],
     icon: Code2,
     iconBg: 'bg-clay/30',
     iconColor: 'text-espresso',
@@ -44,25 +30,6 @@ interface ExperienceEntry {
 }
 
 const experience: ExperienceEntry[] = [
-  {
-    title: 'Heleani Animal Health',
-    years: '2025 - 2026',
-    role: 'Frontend Developer',
-    description:
-      'Built the frontend and its connection to the backend for a full-stack veterinary platform, developed with a team.',
-    icon: Puzzle,
-    iconBg: 'bg-accent-200',
-    iconColor: 'text-accent-600',
-  },
-  {
-    title: 'Reading Journal',
-    years: '2025 - 2026',
-    role: 'Solo Designer & Developer',
-    description: 'Designed and shipped a full-stack reading tracker end to end, from prototype to deployment.',
-    icon: Network,
-    iconBg: 'bg-terracotta/25',
-    iconColor: 'text-rust',
-  },
   {
     title: 'Project Name',
     years: '20XX - 20XX',

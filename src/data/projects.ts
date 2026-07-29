@@ -1,17 +1,17 @@
 import type { Project } from './types'
 
 // Swap `cardColor` for a real screenshot/mockup by adding an `image` path
-// (drop the file in /public/projects/ and point to it, e.g. '/projects/reading-journal-cover.png').
+// (drop the file in /public/projects/ and point to it, e.g. '/projects/book-tracker-cover.png').
 // The card and detail hero both fall back to the solid color until you do.
 export const projects: Project[] = [
   {
     id: '1',
-    slug: 'reading-journal',
-    title: { en: 'Reading Journal', es: 'Reading Journal' },
+    slug: 'book-tracker',
+    title: { en: 'Book Tracker', es: 'App de Seguimiento de Libros' },
     type: { en: 'Web App', es: 'Aplicación Web' },
     category: 'UX/UI Design',
     cardColor: 'bg-terracotta',
-    image: '/projects/reading-journal/cover.png',
+    image: '/projects/book-tracker/cover.png',
     timeline: { en: '2 weeks', es: '2 semanas' },
     role: { en: 'Solo Designer & Developer', es: 'Diseñadora y Desarrolladora Única' },
     tools: { en: 'React, Tailwind, Express, Drizzle, Neon, Cloudinary', es: 'React, Tailwind, Express, Drizzle, Neon, Cloudinary' },
@@ -22,7 +22,7 @@ export const projects: Project[] = [
         'Later hardened it for production: cover images moved to Cloudinary after Render\'s free-tier disk was silently wiping them on restart, a GitHub Actions cron keeps the backend warm, and a public Gift List page lets friends and family browse the wishlist without logging in.',
       ],
       es: [
-        'Un rastreador de lectura personal que pasó de ser un prototipo generado con Claude a una app full-stack: seguimiento de estado, series, reseñas con calificación por estrellas, y una página de estadísticas con desgloses año por año.',
+        'Una app de seguimiento de libros personal que pasó de ser un prototipo generado con Claude a una app full-stack: seguimiento de estado, series, reseñas con calificación por estrellas, y una página de estadísticas con desgloses año por año.',
         'Construida con autenticación (JWT, bcrypt, datos por usuario) para soportar múltiples cuentas, luego desplegada con el frontend en GitHub Pages y el backend en Render con una base de datos Neon Postgres.',
         'Más adelante la reforcé para producción: las portadas se movieron a Cloudinary tras descubrir que el disco gratuito de Render las borraba en cada reinicio, un cron de GitHub Actions mantiene el backend activo, y una página pública de Gift List permite a amigos y familia ver la lista de deseos sin iniciar sesión.',
       ],
@@ -30,23 +30,23 @@ export const projects: Project[] = [
     gallery: [
       {
         color: 'bg-terracotta',
-        image: '/projects/reading-journal/library.png',
-        alt: { en: 'Reading Journal library grid view', es: 'Vista de cuadrícula de la biblioteca de Reading Journal' },
+        image: '/projects/book-tracker/library.png',
+        alt: { en: 'Book Tracker library grid view', es: 'Vista de cuadrícula de la biblioteca de Book Tracker' },
       },
       {
         color: 'bg-clay',
-        image: '/projects/reading-journal/stats.png',
-        alt: { en: 'Reading Journal stats page', es: 'Página de estadísticas de Reading Journal' },
+        image: '/projects/book-tracker/stats.png',
+        alt: { en: 'Book Tracker stats page', es: 'Página de estadísticas de Book Tracker' },
       },
       {
         color: 'bg-espresso',
-        image: '/projects/reading-journal/reading.png',
-        alt: { en: 'Reading Journal reading progress view', es: 'Vista de progreso de lectura de Reading Journal' },
+        image: '/projects/book-tracker/reading.png',
+        alt: { en: 'Book Tracker reading progress view', es: 'Vista de progreso de lectura de Book Tracker' },
       },
       {
         color: 'bg-rust',
-        image: '/projects/reading-journal/signin.png',
-        alt: { en: 'Reading Journal sign in page', es: 'Página de inicio de sesión de Reading Journal' },
+        image: '/projects/book-tracker/signin.png',
+        alt: { en: 'Book Tracker sign in page', es: 'Página de inicio de sesión de Book Tracker' },
       },
     ],
     summary: {
@@ -54,7 +54,7 @@ export const projects: Project[] = [
       es: 'Este fue mi primer despliegue completo de una app full-stack diseñada por mí misma, y mi primera lección real de confiabilidad en producción, desde almacenamiento persistente de archivos hasta mantener despierto un servidor de plan gratuito.',
     },
     liveUrl: {
-      url: 'https://fiore-rs.github.io/ReadingJournal/',
+      url: 'https://fiore-rs.github.io/BookTracker/library',
       label: { en: 'View Live Site', es: 'Ver Sitio en Vivo' },
     },
   },

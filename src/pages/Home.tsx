@@ -66,12 +66,12 @@ interface ExperienceEntry {
 
 const experience: ExperienceEntry[] = [
   {
-    title: { en: 'Reading Journal', es: 'Diario de Lectura' },
+    title: { en: 'Book Tracker', es: 'App de Seguimiento de Libros' },
     years: '2026',
     role: { en: 'Solo Designer & Developer', es: 'Diseñadora y Desarrolladora Única' },
     description: {
-      en: 'Designed and shipped a full-stack reading tracker end to end, from prototype to deployment.',
-      es: 'Diseñé y lancé un rastreador de lectura full-stack de principio a fin, desde el prototipo hasta el despliegue.',
+      en: 'Designed and shipped a full-stack book tracker end to end, from prototype to deployment.',
+      es: 'Diseñé y lancé una app de seguimiento de libros full-stack de principio a fin, desde el prototipo hasta el despliegue.',
     },
     icon: Network,
     iconBg: 'bg-accent-200',

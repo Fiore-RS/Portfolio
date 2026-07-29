@@ -26,7 +26,7 @@ npm run dev
   smooth-scroll to the right section, even when navigating there from a
   project detail page.
 - `src/data/projects.ts` — all project content lives here, in both languages. Seeded with
-  Reading Journal, PyCon LATAM 2025, Pixmatic Studios, Happy Home, and Hack GB; one
+  Book Tracker, PyCon LATAM 2025, Pixmatic Studios, Happy Home, and Hack GB; one
   placeholder UX/UI entry ("Project Title") is left to replace as you add more.
 - `src/components/ProjectCard.tsx` / `ProjectCarousel.tsx` — the swipeable, scroll-snap
   carousel used for "Selected work" (uniform card size, no page-height growth as you add
@@ -66,7 +66,7 @@ This project is already configured for a repo named **Portfolio**:
 - `vite.config.ts` → `base: '/Portfolio/'`
 - `src/main.tsx` → `<BrowserRouter basename="/Portfolio">`
 - `public/404.html` + the inline script in `index.html` → the same SPA redirect
-  trick you used on Reading Journal, so refreshing `/work/reading-journal`
+  trick you used on Book Tracker, so refreshing `/work/book-tracker`
   doesn't 404.
 - `.github/workflows/deploy.yml` → builds and publishes `dist/` to GitHub Pages
   automatically on every push to `main`.

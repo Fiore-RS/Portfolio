@@ -29,8 +29,8 @@ const webPackages: Package[] = [
     name: { en: 'Small Full-Stack App', es: 'App Full-Stack (Escala Pequeña)' },
     price: '$500',
     description: {
-      en: 'Personal tools, trackers, or small platforms with auth and a database, like Reading Journal. Does not cover large-scale apps (e-commerce, payments, AI chat features, etc.).',
-      es: 'Herramientas personales, rastreadores o plataformas pequeñas con autenticación y base de datos, como Reading Journal. No incluye aplicaciones a gran escala (compras en línea, pagos, chats de asistente con IA, etc.).',
+      en: 'Personal tools, trackers, or small platforms with auth and a database, like Book Tracker. Does not cover large-scale apps (e-commerce, payments, AI chat features, etc.).',
+      es: 'Herramientas personales, rastreadores o plataformas pequeñas con autenticación y base de datos, como Book Tracker. No incluye aplicaciones a gran escala (compras en línea, pagos, chats de asistente con IA, etc.).',
     },
   },
 ]

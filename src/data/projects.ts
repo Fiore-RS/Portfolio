@@ -54,7 +54,7 @@ export const projects: Project[] = [
       es: 'Este fue mi primer despliegue completo de una app full-stack diseñada por mí misma, y mi primera lección real de confiabilidad en producción, desde almacenamiento persistente de archivos hasta mantener despierto un servidor de plan gratuito.',
     },
     liveUrl: {
-      url: 'https://fiore-rs.github.io/BookTracker/library',
+      url: 'https://fiore-rs.github.io/BookTracker/',
       label: { en: 'View Live Site', es: 'Ver Sitio en Vivo' },
     },
   },

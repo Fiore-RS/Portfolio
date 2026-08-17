@@ -260,6 +260,60 @@ export const projects: Project[] = [
       es: 'Diseñar bajo una fecha límite estricta para la búsqueda de patrocinadores significó confiar en mi primera dirección fuerte en vez de iterar sin fin. Un buen ejercicio para entregar rápido una marca clara y simbólica (el fénix) para un equipo con el que nunca había trabajado.',
     },
   },
+  {
+    id: '7',
+    slug: 'teleo',
+    title: { en: 'Teleo', es: 'Teleo' },
+    type: { en: 'Web App', es: 'Aplicación Web' },
+    category: 'UX/UI Design',
+    cardColor: 'bg-terracotta',
+    image: '/projects/teleo/cover.png',
+    timeline: { en: '6 weeks', es: '6 semanas' },
+    role: { en: 'Solo Designer & Developer', es: 'Diseñadora y Desarrolladora Única' },
+    tools: { en: 'React, TypeScript, Tailwind CSS, Supabase, GitHub Actions', es: 'React, TypeScript, Tailwind CSS, Supabase, GitHub Actions' },
+    overview: {
+      en: [
+        'Teleo is a private, ad-free reading journal: track books and sagas by status (reading, to-be-read, finished, abandoned, wishlist), log reviews with custom ratings, favorite quotes, and a favorite character card, keep a daily reading streak and an annual reading goal, and add books fast with a barcode/ISBN scanner.',
+        'Built as a React + TypeScript SPA on Vite and Tailwind, with Supabase handling auth, the Postgres database (row-level security scoped per user), and file storage for avatars. A public, shareable profile page (with its own QR code) lets other people browse someone\'s shelf and wishlist without an account.',
+        'Shipping it as a static SPA on GitHub Pages surfaced a string of production details a local dev server hides: client-side routes need a base path, a router basename, and a 404-to-index fallback to survive a hard refresh; a Supabase Edge Function silently fails from the browser without explicit CORS headers; a QR code hardcoded to one color disappears on a dark background; and a mobile-first layout needs an explicit centered, max-width frame to stay readable on a desktop-sized screen instead of stretching edge to edge.',
+      ],
+      es: [
+        'Teleo es un diario de lectura privado y sin anuncios: seguimiento de libros y sagas por estado (leyendo, pendiente, terminado, abandonado, deseado), reseñas con calificaciones personalizadas, citas favoritas y una ficha de personaje favorito, racha diaria de lectura y meta anual, y una forma rápida de agregar libros escaneando el código de barras/ISBN.',
+        'Construida como una SPA de React + TypeScript sobre Vite y Tailwind, con Supabase manejando la autenticación, la base de datos Postgres (con seguridad a nivel de fila por usuario) y el almacenamiento de archivos para avatares. Una página de perfil pública y compartible (con su propio código QR) permite que otras personas vean el estante y la lista de deseados de alguien sin necesidad de cuenta.',
+        'Publicarla como SPA estática en GitHub Pages sacó a la luz una serie de detalles de producción que un servidor de desarrollo local esconde: las rutas del lado del cliente necesitan una ruta base, un basename en el router, y un 404 que redirija a index para sobrevivir a un refresh; una Edge Function de Supabase falla en silencio desde el navegador sin headers de CORS explícitos; un código QR con un color fijo desaparece sobre fondo oscuro; y un diseño pensado para móvil necesita un marco centrado y de ancho máximo explícito para no estirarse de borde a borde en una pantalla de escritorio.',
+      ],
+    },
+    gallery: [
+      {
+        color: 'bg-terracotta',
+        image: '/projects/teleo/inicio.png',
+        alt: { en: 'Teleo currently-reading dashboard with streak and annual goal', es: 'Panel de "Leyendo ahora" de Teleo con racha y meta anual' },
+      },
+      {
+        color: 'bg-clay',
+        image: '/projects/teleo/estante.png',
+        alt: { en: 'Teleo library shelf grid with status filters', es: 'Estante de biblioteca de Teleo con filtros por estado' },
+      },
+      {
+        color: 'bg-espresso',
+        image: '/projects/teleo/cuaderno.png',
+        alt: { en: 'Teleo reading journal with reviews and ratings', es: 'Cuaderno de reseñas y calificaciones de Teleo' },
+      },
+      {
+        color: 'bg-rust',
+        image: '/projects/teleo/perfil.png',
+        alt: { en: 'Teleo profile page with annual goal progress', es: 'Página de perfil de Teleo con progreso de meta anual' },
+      },
+    ],
+    summary: {
+      en: 'This project pushed me past "it works on localhost" into real deployment ownership: wiring a CI/CD pipeline with GitHub Actions, debugging a CORS failure that only shows up cross-origin, and adapting a mobile-first design to hold up honestly on a desktop screen instead of just stretching to fit.',
+      es: 'Este proyecto me llevó más allá de "funciona en localhost" hacia una propiedad real del despliegue: configurar un pipeline de CI/CD con GitHub Actions, depurar una falla de CORS que solo aparece entre orígenes distintos, y adaptar un diseño pensado para móvil para que se sostenga honestamente en una pantalla de escritorio en vez de solo estirarse para llenarla.',
+    },
+    liveUrl: {
+      url: 'https://fiore-rs.github.io/teleo/',
+      label: { en: 'View Live Site', es: 'Ver Sitio en Vivo' },
+    },
+  },
 ]
 
 export const getProjectBySlug = (slug: string) => projects.find((p) => p.slug === slug)

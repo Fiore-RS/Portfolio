@@ -268,7 +268,7 @@ export const projects: Project[] = [
     category: 'UX/UI Design',
     cardColor: 'bg-terracotta',
     image: '/projects/teleo/cover.png',
-    timeline: { en: '6 weeks', es: '6 semanas' },
+    timeline: { en: 'August 2026 - present time', es: 'Agosto 2026 - actualidad' },
     role: { en: 'Solo Designer & Developer', es: 'Diseñadora y Desarrolladora Única' },
     tools: { en: 'React, TypeScript, Tailwind CSS, Supabase, GitHub Actions', es: 'React, TypeScript, Tailwind CSS, Supabase, GitHub Actions' },
     overview: {

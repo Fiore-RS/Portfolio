@@ -138,11 +138,11 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="mx-auto max-w-4xl px-6 pb-16 pt-[7.5rem] text-center">
+      <section className="mx-auto max-w-4xl overflow-x-hidden px-6 pb-16 pt-[7.5rem] text-center">
         <span className="inline-block rounded-full bg-accent-100 px-3.5 py-1 text-xs font-medium text-accent-600">
           {t(ui.hero.badge)}
         </span>
-        <h1 className="mx-auto mt-6 max-w-4xl font-display text-6xl font-extrabold leading-[1.1] text-ink md:text-7xl">
+        <h1 className="mx-auto mt-6 max-w-4xl break-words font-display text-4xl font-extrabold leading-[1.15] text-ink sm:text-5xl md:text-7xl md:leading-[1.1]">
           {t(ui.hero.titleStart)} <span className="text-accent-500">{t(ui.hero.titleHighlight)}</span>
         </h1>
         <p className="mx-auto mt-6 max-w-lg text-body">{t(ui.hero.body)}</p>

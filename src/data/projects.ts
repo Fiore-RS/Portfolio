@@ -232,7 +232,7 @@ export const projects: Project[] = [
     gallery: [
       {
         color: 'bg-terracotta',
-        image: '/projects/teleo/inicio.png',
+        image: '/projects/teleo/mesa.png',
         alt: { en: 'Teleo currently-reading dashboard with streak and annual goal', es: 'Panel de "Leyendo ahora" de Teleo con racha y meta anual' },
       },
       {

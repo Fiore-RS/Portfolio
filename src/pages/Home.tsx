@@ -144,7 +144,7 @@ export default function Home() {
             <span className="inline-block rounded-full bg-accent-100 px-3.5 py-1 text-xs font-medium text-accent-600">
               {t(ui.hero.badge)}
             </span>
-            <h1 className="mx-auto mt-6 max-w-xl break-words font-display text-4xl font-extrabold leading-[1.15] text-ink sm:text-5xl md:mx-0 md:text-6xl md:leading-[1.1]">
+            <h1 className="mx-auto mt-6 max-w-xl break-words font-display text-4xl font-extrabold leading-[1.15] text-ink sm:text-5xl md:mx-0 md:text-5xl md:leading-[1.1]">
               {t(ui.hero.titleStart)} <span className="text-accent-500">{t(ui.hero.titleHighlight)}</span>
             </h1>
             <p className="mx-auto mt-6 max-w-lg text-body md:mx-0">{t(ui.hero.body)}</p>
@@ -174,8 +174,8 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Portrait */}
-          <div className="order-first md:order-2">
+          {/* Portrait — hidden on mobile, shown from md up */}
+          <div className="hidden md:order-2 md:block">
             <div className="relative mx-auto w-56 sm:w-64 md:w-full md:max-w-sm">
               <div
                 aria-hidden="true"

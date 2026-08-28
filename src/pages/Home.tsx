@@ -5,7 +5,6 @@ import {
   Image as ImageIcon,
   Code2,
   Puzzle,
-  Network,
   Images,
   Share2,
   Github,
@@ -56,7 +55,7 @@ const tools: ToolGroup[] = [
 
 interface ExperienceEntry {
   title: Localized
-  years: string
+  years: Localized
   role: Localized
   description: Localized
   icon: ComponentType<{ size?: number; className?: string }>
@@ -66,20 +65,8 @@ interface ExperienceEntry {
 
 const experience: ExperienceEntry[] = [
   {
-    title: { en: 'Book Tracker', es: 'App de Seguimiento de Libros' },
-    years: '2026',
-    role: { en: 'Solo Designer & Developer', es: 'Diseñadora y Desarrolladora Única' },
-    description: {
-      en: 'Designed and shipped a full-stack book tracker end to end, from prototype to deployment.',
-      es: 'Diseñé y lancé una app de seguimiento de libros full-stack de principio a fin, desde el prototipo hasta el despliegue.',
-    },
-    icon: Network,
-    iconBg: 'bg-accent-200',
-    iconColor: 'text-accent-600',
-  },
-  {
     title: { en: 'PyCon LATAM 2025', es: 'PyCon LATAM 2025' },
-    years: '2025',
+    years: { en: '2025', es: '2025' },
     role: { en: 'Freelance Brand Designer', es: 'Diseñadora de Marca Freelance' },
     description: {
       en: 'Corrected the event logo and built the complete brand manual, supervised by my design professor.',
@@ -90,16 +77,28 @@ const experience: ExperienceEntry[] = [
     iconColor: 'text-rust',
   },
   {
-    title: { en: 'Happy Home', es: 'Happy Home' },
-    years: '2025',
-    role: { en: 'Freelance Graphic Designer', es: 'Diseñadora Gráfica Freelance' },
+    title: { en: 'Hack GB', es: 'Hack GB' },
+    years: { en: '2026', es: '2026' },
+    role: { en: 'Design Team Support', es: 'Apoyo al Equipo de Diseño' },
     description: {
-      en: 'Redesigned the logo and identity for a student housing business in one week, paid freelance.',
-      es: 'Rediseñé el logo e identidad de un negocio de alquiler para estudiantes en una semana, freelance pagado.',
+      en: "Designed the phoenix logo and brand mark for UW-Green Bay's hackathon in one week, ahead of the sponsor outreach deadline.",
+      es: 'Diseñé el logo y la marca del fénix para el hackathon de UW-Green Bay en una semana, antes de la fecha límite de búsqueda de patrocinadores.',
     },
     icon: Images,
     iconBg: 'bg-clay/30',
     iconColor: 'text-espresso',
+  },
+  {
+    title: { en: 'Teleo', es: 'Teleo' },
+    years: { en: '2026 - Present', es: '2026 - Presente' },
+    role: { en: 'Solo Designer & Developer', es: 'Diseñadora y Desarrolladora Única' },
+    description: {
+      en: 'Designing and building a private, ad-free reading journal web app end to end, from UX to a Supabase-backed database.',
+      es: 'Diseñando y construyendo un diario de lectura privado y sin anuncios de principio a fin, desde la UX hasta una base de datos con Supabase.',
+    },
+    icon: Code2,
+    iconBg: 'bg-accent-200',
+    iconColor: 'text-accent-600',
   },
 ]
 
@@ -245,7 +244,7 @@ export default function Home() {
                 <div className="flex items-start justify-between">
                   <div>
                     <h3 className="text-lg font-bold">{t(entry.title)}</h3>
-                    <p className="text-sm text-body/70">{entry.years}</p>
+                    <p className="text-sm text-body/70">{t(entry.years)}</p>
                   </div>
                   <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${entry.iconBg}`}>
                     <Icon size={20} className={entry.iconColor} />

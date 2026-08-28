@@ -18,6 +18,10 @@ export const ui = {
     statsProjects: { en: 'Projects', es: 'Proyectos' },
     statsDisciplines: { en: 'UX/UI & Graphic Design', es: 'UX/UI y Diseño Gráfico' },
     statsLocation: { en: 'Costa Rica', es: 'Costa Rica' },
+    photoAlt: {
+      en: 'Portrait of Fiorella, smiling at the camera.',
+      es: 'Retrato de Fiorella, sonriendo a la cámara.',
+    },
   },
   work: {
     heading: { en: 'Selected', es: 'Trabajo' },

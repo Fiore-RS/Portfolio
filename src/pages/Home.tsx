@@ -16,6 +16,7 @@ import type { ComponentType } from 'react'
 import ProjectCarousel from '../components/ProjectCarousel'
 import CategoryFilter from '../components/CategoryFilter'
 import { projects } from '../data/projects'
+import { assetUrl } from '../lib/assetUrl'
 import type { ProjectCategory, Localized } from '../data/types'
 import { ui, useTranslations } from '../i18n/translations'
 
@@ -137,37 +138,60 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="mx-auto max-w-4xl overflow-x-hidden px-6 pb-16 pt-[7.5rem] text-center">
-        <span className="inline-block rounded-full bg-accent-100 px-3.5 py-1 text-xs font-medium text-accent-600">
-          {t(ui.hero.badge)}
-        </span>
-        <h1 className="mx-auto mt-6 max-w-4xl break-words font-display text-4xl font-extrabold leading-[1.15] text-ink sm:text-5xl md:text-7xl md:leading-[1.1]">
-          {t(ui.hero.titleStart)} <span className="text-accent-500">{t(ui.hero.titleHighlight)}</span>
-        </h1>
-        <p className="mx-auto mt-6 max-w-lg text-body">{t(ui.hero.body)}</p>
-        <div className="mt-8 flex justify-center gap-4">
-          <Link
-            to="/#work"
-            className="rounded-2xl bg-accent-400 px-6 py-3 font-semibold text-white transition-colors hover:bg-accent-600"
-          >
-            {t(ui.hero.viewWork)}
-          </Link>
-          <Link
-            to="/#about"
-            className="rounded-2xl border border-ink/20 px-6 py-3 font-semibold text-ink transition-colors hover:border-ink/40"
-          >
-            {t(ui.hero.aboutMe)}
-          </Link>
-        </div>
+      <section className="mx-auto max-w-6xl overflow-x-hidden px-6 pb-16 pt-[7.5rem]">
+        <div className="grid items-center gap-12 md:grid-cols-[1.05fr_0.95fr] md:gap-10">
+          <div className="text-center md:text-left">
+            <span className="inline-block rounded-full bg-accent-100 px-3.5 py-1 text-xs font-medium text-accent-600">
+              {t(ui.hero.badge)}
+            </span>
+            <h1 className="mx-auto mt-6 max-w-xl break-words font-display text-4xl font-extrabold leading-[1.15] text-ink sm:text-5xl md:mx-0 md:text-6xl md:leading-[1.1]">
+              {t(ui.hero.titleStart)} <span className="text-accent-500">{t(ui.hero.titleHighlight)}</span>
+            </h1>
+            <p className="mx-auto mt-6 max-w-lg text-body md:mx-0">{t(ui.hero.body)}</p>
+            <div className="mt-8 flex flex-wrap justify-center gap-4 md:justify-start">
+              <Link
+                to="/#work"
+                className="rounded-2xl bg-accent-400 px-6 py-3 font-semibold text-white transition-colors hover:bg-accent-600"
+              >
+                {t(ui.hero.viewWork)}
+              </Link>
+              <Link
+                to="/#about"
+                className="rounded-2xl border border-ink/20 px-6 py-3 font-semibold text-ink transition-colors hover:border-ink/40"
+              >
+                {t(ui.hero.aboutMe)}
+              </Link>
+            </div>
 
-        <div className="mt-10 inline-flex flex-wrap items-center justify-center gap-3 rounded-full bg-accent-100 px-6 py-3 text-sm font-medium text-accent-600">
-          <span>
-            {projects.length}+ {t(ui.hero.statsProjects)}
-          </span>
-          <span className="h-1 w-1 rounded-full bg-accent-400" aria-hidden="true" />
-          <span>{t(ui.hero.statsDisciplines)}</span>
-          <span className="h-1 w-1 rounded-full bg-accent-400" aria-hidden="true" />
-          <span>{t(ui.hero.statsLocation)}</span>
+            <div className="mt-10 inline-flex flex-wrap items-center justify-center gap-3 rounded-full bg-accent-100 px-6 py-3 text-sm font-medium text-accent-600 md:justify-start">
+              <span>
+                {projects.length}+ {t(ui.hero.statsProjects)}
+              </span>
+              <span className="h-1 w-1 rounded-full bg-accent-400" aria-hidden="true" />
+              <span>{t(ui.hero.statsDisciplines)}</span>
+              <span className="h-1 w-1 rounded-full bg-accent-400" aria-hidden="true" />
+              <span>{t(ui.hero.statsLocation)}</span>
+            </div>
+          </div>
+
+          {/* Portrait */}
+          <div className="order-first md:order-2">
+            <div className="relative mx-auto w-56 sm:w-64 md:w-full md:max-w-sm">
+              <div
+                aria-hidden="true"
+                className="absolute -right-5 -top-5 -z-10 h-full w-full rounded-[2.5rem] bg-accent-200"
+              />
+              <div
+                aria-hidden="true"
+                className="absolute -bottom-5 -left-5 -z-10 h-2/3 w-2/3 rounded-[2rem] bg-terracotta/25"
+              />
+              <img
+                src={assetUrl('profile/fiorella.webp')}
+                alt={t(ui.hero.photoAlt)}
+                className="w-full rounded-[2rem] drop-shadow-xl"
+              />
+            </div>
+          </div>
         </div>
       </section>
 

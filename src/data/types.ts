@@ -26,4 +26,6 @@ export interface Project {
   pdf?: { path: string; label: Localized }
   /** Optional external link (e.g. the live deployed site) shown as a button on the project page. */
   liveUrl?: { url: string; label: Localized }
+  /** Optional small warning/note shown just below the live site button (e.g. a free-tier cold start heads-up). */
+  liveNote?: Localized
 }

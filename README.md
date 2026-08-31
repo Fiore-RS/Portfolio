@@ -26,7 +26,7 @@ npm run dev
   smooth-scroll to the right section, even when navigating there from a
   project detail page.
 - `src/data/projects.ts` — all project content lives here, in both languages. Seeded with
-  PyCon LATAM 2025, Pixmatic Studios, Happy Home, Hack GB, and Teleo; one
+  PyCon LATAM 2025, Pixmatic Studios, Happy Home, Hack GB, Book Tracker, and Teleo; one
   placeholder UX/UI entry ("Project Title") is left to replace as you add more.
 - `src/components/ProjectCard.tsx` / `ProjectCarousel.tsx` — the swipeable, scroll-snap
   carousel used for "Selected work" (uniform card size, no page-height growth as you add

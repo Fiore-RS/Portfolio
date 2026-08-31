@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Navigate, useParams, Link } from 'react-router-dom'
-import { FileDown, ExternalLink } from 'lucide-react'
+import { FileDown, ExternalLink, AlertTriangle } from 'lucide-react'
 import { getProjectBySlug, projects } from '../data/projects'
 import { ui, useTranslations } from '../i18n/translations'
 import ImageLightbox from '../components/ImageLightbox'
@@ -77,6 +77,13 @@ export default function ProjectDetail() {
               <ExternalLink size={18} />
               {t(project.liveUrl.label)}
             </a>
+          )}
+
+          {project.liveUrl && project.liveNote && (
+            <p className="mt-3 flex items-start gap-2 rounded-xl bg-clay/20 px-3 py-2 text-xs text-body/70">
+              <AlertTriangle size={14} className="mt-0.5 shrink-0 text-rust" />
+              <span>{t(project.liveNote)}</span>
+            </p>
           )}
 
           {project.pdf && (

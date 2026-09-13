@@ -318,6 +318,60 @@ export const projects: Project[] = [
       label: { en: 'View Live Site', es: 'Ver Sitio en Vivo' },
     },
   },
+  {
+    id: '9',
+    slug: 'sobres',
+    title: { en: 'Sobres', es: 'Sobres' },
+    type: { en: 'Web App (PWA)', es: 'Aplicación Web (PWA)' },
+    category: 'UX/UI Design',
+    cardColor: 'bg-clay',
+    image: '/projects/sobres/cover.png',
+    timeline: { en: 'September 2026', es: 'Setiembre 2026' },
+    role: { en: 'Solo Designer & Developer', es: 'Diseñadora y Desarrolladora Única' },
+    tools: { en: 'React, TypeScript, Tailwind CSS, Vite PWA', es: 'React, TypeScript, Tailwind CSS, Vite PWA' },
+    overview: {
+      en: [
+        "Sobres is a personal budgeting app based on the BCR (Banco de Costa Rica) envelope system: it splits an income across the envelopes you choose, recalculating their priorities proportionally so they always add up to 100% of that income. It's a visual reference tool only, never connecting to a real bank or account.",
+        'Each envelope keeps a running balance instead of working like a one-off calculator, so priorities, balances, and movement history persist across incomes. Built as an installable PWA with React 19, TypeScript, and Tailwind CSS v4, storing everything in localStorage with no backend, following the same pattern as Teleo.',
+        'Deployed to GitHub Pages via GitHub Actions, with drag-and-drop reordering of envelopes, manual balance correction that skips generating a movement, its own install icons and splash screens, and a clean first run with no sample data for new users.',
+      ],
+      es: [
+        'Sobres es una app personal de presupuesto basada en el sistema de sobres del BCR (Banco de Costa Rica): reparte un ingreso entre los sobres que elegís, recalculando sus prioridades proporcionalmente para que siempre sumen el 100% de ese ingreso. Es una herramienta visual de referencia, no se conecta a ningún banco ni cuenta real.',
+        'Cada sobre lleva un saldo acumulado en vez de funcionar como una calculadora puntual, así que las prioridades, saldos e historial de movimientos persisten entre ingresos. Construida como una PWA instalable con React 19, TypeScript y Tailwind CSS v4, guardando todo en localStorage sin backend, siguiendo el mismo patrón que Teleo.',
+        'Desplegada en GitHub Pages vía GitHub Actions, con reordenamiento de sobres por drag-and-drop, corrección manual de saldo sin generar un movimiento, íconos y splash screens propios para instalarla, y un primer arranque limpio sin datos de ejemplo para usuarios nuevos.',
+      ],
+    },
+    gallery: [
+      {
+        color: 'bg-clay',
+        image: '/projects/sobres/nuevo-ingreso.png',
+        alt: { en: 'Sobres new income screen with the proportional split preview', es: 'Pantalla de nuevo ingreso de Sobres con la vista previa del reparto proporcional' },
+      },
+      {
+        color: 'bg-rust',
+        image: '/projects/sobres/gestion-sobres.png',
+        alt: { en: 'Sobres envelope management screen with drag-and-drop reordering', es: 'Pantalla de gestión de sobres de Sobres con reordenamiento por drag-and-drop' },
+      },
+      {
+        color: 'bg-terracotta',
+        image: '/projects/sobres/detalle-sobre.png',
+        alt: { en: 'Sobres envelope detail screen with balance and recent movements', es: 'Pantalla de detalle de sobre de Sobres con saldo y movimientos recientes' },
+      },
+      {
+        color: 'bg-espresso',
+        image: '/projects/sobres/historial.png',
+        alt: { en: 'Sobres movement history screen filtered by income and expenses', es: 'Pantalla de historial de movimientos de Sobres filtrada por ingresos y gastos' },
+      },
+    ],
+    summary: {
+      en: 'Designing Sobres meant translating a real financial mental model, the BCR envelope system, into clear interaction rules before writing any application logic: proportional recalculation of priorities so they always add up to 100%, rounding by largest remainder so amounts still sum exactly, and drag-and-drop reordering that stays honest to how people actually prioritize their money.',
+      es: 'Diseñar Sobres significó traducir un modelo mental financiero real, el sistema de sobres del BCR, en reglas de interacción claras antes de escribir cualquier lógica de la aplicación: recálculo proporcional de prioridades para que siempre sumen 100%, redondeo por mayor residuo para que los montos sigan sumando exacto, y reordenamiento por drag-and-drop que respeta cómo las personas priorizan de verdad su dinero.',
+    },
+    liveUrl: {
+      url: 'https://fiore-rs.github.io/sobres/',
+      label: { en: 'View Live Site', es: 'Ver Sitio en Vivo' },
+    },
+  },
 ]
 
 export const getProjectBySlug = (slug: string) => projects.find((p) => p.slug === slug)

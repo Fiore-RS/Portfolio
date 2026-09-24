@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import type { CSSProperties } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import ProjectCard from './ProjectCard'
 import type { Project } from '../data/types'
@@ -30,10 +31,12 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
         ref={trackRef}
         className="scrollbar-hide flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-2"
       >
-        {projects.map((project) => (
+        {projects.map((project, i) => (
           <div
             key={project.id}
             data-carousel-card
+            data-reveal
+            style={{ '--reveal-delay': `${Math.min(i, 3) * 90}ms` } as CSSProperties}
             className="aspect-[4/5] w-64 shrink-0 snap-start sm:w-72 md:w-80"
           >
             <ProjectCard project={project} />
@@ -49,7 +52,7 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
             type="button"
             onClick={() => scrollByCard('prev')}
             aria-label={t(ui.work.prev)}
-            className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-accent-500 text-accent-500 transition-colors hover:bg-accent-100"
+            className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-accent-500 text-accent-500 transition hover:bg-accent-100 active:scale-90"
           >
             <ChevronLeft size={22} strokeWidth={2.75} />
           </button>
@@ -57,7 +60,7 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
             type="button"
             onClick={() => scrollByCard('next')}
             aria-label={t(ui.work.next)}
-            className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-accent-500 text-accent-500 transition-colors hover:bg-accent-100"
+            className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-accent-500 text-accent-500 transition hover:bg-accent-100 active:scale-90"
           >
             <ChevronRight size={22} strokeWidth={2.75} />
           </button>

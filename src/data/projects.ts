@@ -1,8 +1,8 @@
 import type { Project } from './types'
 
-// Swap `cardColor` for a real screenshot/mockup by adding an `image` path
-// (drop the file in /public/projects/ and point to it, e.g. '/projects/teleo-cover.png').
-// The card and detail hero both fall back to the solid color until you do.
+// Graphic design projects use a cover `image` + `gallery` (files live in /public/projects/).
+// Apps and websites intentionally have NO screenshots: they use a generated `cover` (AppCover.tsx,
+// built from each app's palette + logo) and the `liveUrl` button leads to the real, always-current product.
 export const projects: Project[] = [
   {
     id: '2',
@@ -213,7 +213,7 @@ export const projects: Project[] = [
     type: { en: 'Web App', es: 'Aplicación Web' },
     category: 'UX/UI Design',
     cardColor: 'bg-terracotta',
-    image: '/projects/book-tracker/cover.png',
+    cover: 'book-tracker',
     timeline: { en: '2 weeks', es: '2 semanas' },
     role: { en: 'Solo Designer & Developer', es: 'Diseñadora y Desarrolladora Única' },
     tools: { en: 'React, Tailwind, Express, Drizzle, Neon, Cloudinary', es: 'React, Tailwind, Express, Drizzle, Neon, Cloudinary' },
@@ -229,28 +229,6 @@ export const projects: Project[] = [
         'Más adelante la reforcé para producción: las portadas se movieron a Cloudinary tras descubrir que el disco gratuito de Render las borraba en cada reinicio, un cron de GitHub Actions mantiene el backend activo, y una página pública de Gift List permite a amigos y familia ver la lista de deseos sin iniciar sesión.',
       ],
     },
-    gallery: [
-      {
-        color: 'bg-terracotta',
-        image: '/projects/book-tracker/library.png',
-        alt: { en: 'Book Tracker library grid view', es: 'Vista de cuadrícula de la biblioteca de Book Tracker' },
-      },
-      {
-        color: 'bg-clay',
-        image: '/projects/book-tracker/stats.png',
-        alt: { en: 'Book Tracker stats page', es: 'Página de estadísticas de Book Tracker' },
-      },
-      {
-        color: 'bg-espresso',
-        image: '/projects/book-tracker/reading.png',
-        alt: { en: 'Book Tracker reading progress view', es: 'Vista de progreso de lectura de Book Tracker' },
-      },
-      {
-        color: 'bg-rust',
-        image: '/projects/book-tracker/signin.png',
-        alt: { en: 'Book Tracker sign in page', es: 'Página de inicio de sesión de Book Tracker' },
-      },
-    ],
     summary: {
       en: 'This was my first end-to-end deploy of a full-stack app I designed myself, and my first real lesson in production reliability, from persistent file storage to keeping a free-tier server awake. It later grew into Teleo, a from-scratch rewrite of the same idea.',
       es: 'Este fue mi primer despliegue completo de una app full-stack diseñada por mí misma, y mi primera lección real de confiabilidad en producción, desde almacenamiento persistente de archivos hasta mantener despierto un servidor de plan gratuito. Más adelante se convirtió en Teleo, una reescritura desde cero de la misma idea.',
@@ -271,7 +249,7 @@ export const projects: Project[] = [
     type: { en: 'Web App', es: 'Aplicación Web' },
     category: 'UX/UI Design',
     cardColor: 'bg-terracotta',
-    image: '/projects/teleo/cover.png',
+    cover: 'teleo',
     timeline: { en: 'August 2026 - present time', es: 'Agosto 2026 - actualidad' },
     role: { en: 'Solo Designer & Developer', es: 'Diseñadora y Desarrolladora Única' },
     tools: { en: 'React, TypeScript, Tailwind CSS, Supabase, GitHub Actions', es: 'React, TypeScript, Tailwind CSS, Supabase, GitHub Actions' },
@@ -287,28 +265,6 @@ export const projects: Project[] = [
         'Publicarla como SPA estática en GitHub Pages sacó a la luz una serie de detalles de producción que un servidor de desarrollo local esconde: las rutas del lado del cliente necesitan una ruta base, un basename en el router, y un 404 que redirija a index para sobrevivir a un refresh; una Edge Function de Supabase falla en silencio desde el navegador sin headers de CORS explícitos; un código QR con un color fijo desaparece sobre fondo oscuro; y un diseño pensado para móvil necesita un marco centrado y de ancho máximo explícito para no estirarse de borde a borde en una pantalla de escritorio.',
       ],
     },
-    gallery: [
-      {
-        color: 'bg-terracotta',
-        image: '/projects/teleo/mesa.png',
-        alt: { en: 'Teleo currently-reading dashboard with streak and annual goal', es: 'Panel de "Leyendo ahora" de Teleo con racha y meta anual' },
-      },
-      {
-        color: 'bg-clay',
-        image: '/projects/teleo/estante.png',
-        alt: { en: 'Teleo library shelf grid with status filters', es: 'Estante de biblioteca de Teleo con filtros por estado' },
-      },
-      {
-        color: 'bg-espresso',
-        image: '/projects/teleo/cuaderno.png',
-        alt: { en: 'Teleo reading journal with reviews and ratings', es: 'Cuaderno de reseñas y calificaciones de Teleo' },
-      },
-      {
-        color: 'bg-rust',
-        image: '/projects/teleo/perfil.png',
-        alt: { en: 'Teleo profile page with annual goal progress', es: 'Página de perfil de Teleo con progreso de meta anual' },
-      },
-    ],
     summary: {
       en: 'This project pushed me past "it works on localhost" into real deployment ownership: wiring a CI/CD pipeline with GitHub Actions, debugging a CORS failure that only shows up cross-origin, and adapting a mobile-first design to hold up honestly on a desktop screen instead of just stretching to fit.',
       es: 'Este proyecto me llevó más allá de "funciona en localhost" hacia una propiedad real del despliegue: configurar un pipeline de CI/CD con GitHub Actions, depurar una falla de CORS que solo aparece entre orígenes distintos, y adaptar un diseño pensado para móvil para que se sostenga honestamente en una pantalla de escritorio en vez de solo estirarse para llenarla.',
@@ -325,7 +281,7 @@ export const projects: Project[] = [
     type: { en: 'Web App (PWA)', es: 'Aplicación Web (PWA)' },
     category: 'UX/UI Design',
     cardColor: 'bg-clay',
-    image: '/projects/sobres/cover.png',
+    cover: 'sobres',
     timeline: { en: 'September 2026', es: 'Setiembre 2026' },
     role: { en: 'Solo Designer & Developer', es: 'Diseñadora y Desarrolladora Única' },
     tools: { en: 'React, TypeScript, Tailwind CSS, Vite PWA', es: 'React, TypeScript, Tailwind CSS, Vite PWA' },
@@ -341,28 +297,6 @@ export const projects: Project[] = [
         'Desplegada en GitHub Pages vía GitHub Actions, con reordenamiento de sobres por drag-and-drop, corrección manual de saldo sin generar un movimiento, íconos y splash screens propios para instalarla, y un primer arranque limpio sin datos de ejemplo para usuarios nuevos.',
       ],
     },
-    gallery: [
-      {
-        color: 'bg-clay',
-        image: '/projects/sobres/nuevo-ingreso.png',
-        alt: { en: 'Sobres new income screen with the proportional split preview', es: 'Pantalla de nuevo ingreso de Sobres con la vista previa del reparto proporcional' },
-      },
-      {
-        color: 'bg-rust',
-        image: '/projects/sobres/gestion-sobres.png',
-        alt: { en: 'Sobres envelope management screen with drag-and-drop reordering', es: 'Pantalla de gestión de sobres de Sobres con reordenamiento por drag-and-drop' },
-      },
-      {
-        color: 'bg-terracotta',
-        image: '/projects/sobres/detalle-sobre.png',
-        alt: { en: 'Sobres envelope detail screen with balance and recent movements', es: 'Pantalla de detalle de sobre de Sobres con saldo y movimientos recientes' },
-      },
-      {
-        color: 'bg-espresso',
-        image: '/projects/sobres/historial.png',
-        alt: { en: 'Sobres movement history screen filtered by income and expenses', es: 'Pantalla de historial de movimientos de Sobres filtrada por ingresos y gastos' },
-      },
-    ],
     summary: {
       en: 'Designing Sobres meant translating a real financial mental model, the BCR envelope system, into clear interaction rules before writing any application logic: proportional recalculation of priorities so they always add up to 100%, rounding by largest remainder so amounts still sum exactly, and drag-and-drop reordering that stays honest to how people actually prioritize their money.',
       es: 'Diseñar Sobres significó traducir un modelo mental financiero real, el sistema de sobres del BCR, en reglas de interacción claras antes de escribir cualquier lógica de la aplicación: recálculo proporcional de prioridades para que siempre sumen 100%, redondeo por mayor residuo para que los montos sigan sumando exacto, y reordenamiento por drag-and-drop que respeta cómo las personas priorizan de verdad su dinero.',

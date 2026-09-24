@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import type { Project } from '../data/types'
 import { useTranslations } from '../i18n/translations'
 import { assetUrl } from '../lib/assetUrl'
+import AppCover from './AppCover'
 
 interface ProjectCardProps {
   project: Project
@@ -18,22 +19,26 @@ export default function ProjectCard({ project, size = 'default' }: ProjectCardPr
         size === 'large' ? 'min-h-[440px]' : 'min-h-[210px]'
       }`}
     >
-      {/* Background: real cover image if provided, otherwise the flat brand color */}
+      {/* Background: real cover image, else a generated app cover, else the flat brand color */}
       {project.image ? (
         <img
           src={assetUrl(project.image)}
           alt=""
-          className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
         />
+      ) : project.cover ? (
+        <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-105">
+          <AppCover variant={project.cover} />
+        </div>
       ) : (
-        <div className={`absolute inset-0 ${project.cardColor} transition-transform duration-500 group-hover:scale-105`} />
+        <div className={`absolute inset-0 ${project.cardColor} transition-transform duration-700 ease-out group-hover:scale-105`} />
       )}
 
       {/* Scrim: guarantees the label stays readable (WCAG AA) no matter the
           background color or, later, a busy photo. */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/0 to-black/0" />
 
-      <div className="relative flex h-full flex-col justify-end p-6">
+      <div className="relative flex h-full flex-col justify-end p-6 transition-transform duration-500 ease-out group-hover:-translate-y-1">
         <span className="text-sm font-medium text-white/80">{t(project.type)}</span>
         <h3 className="font-display text-2xl font-bold text-white">{t(project.title)}</h3>
       </div>

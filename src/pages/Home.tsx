@@ -12,7 +12,7 @@ import {
   Send,
   MapPin,
 } from 'lucide-react'
-import type { ComponentType } from 'react'
+import type { ComponentType, CSSProperties } from 'react'
 import ProjectCarousel from '../components/ProjectCarousel'
 import CategoryFilter from '../components/CategoryFilter'
 import { projects } from '../data/projects'
@@ -141,29 +141,38 @@ export default function Home() {
       <section className="mx-auto max-w-6xl overflow-x-hidden px-6 pb-16 pt-[7.5rem]">
         <div className="grid items-center gap-12 md:grid-cols-[1.05fr_0.95fr] md:gap-10">
           <div className="text-center md:text-left">
-            <span className="inline-block rounded-full bg-accent-100 px-3.5 py-1 text-xs font-medium text-accent-600">
+            <span className="inline-block animate-rise rounded-full bg-accent-100 px-3.5 py-1 text-xs font-medium text-accent-600">
               {t(ui.hero.badge)}
             </span>
-            <h1 className="mx-auto mt-6 max-w-xl break-words font-display text-4xl font-extrabold leading-[1.15] text-ink sm:text-5xl md:mx-0 md:text-5xl md:leading-[1.1]">
+            <h1
+              style={{ animationDelay: '90ms' }}
+              className="mx-auto mt-6 max-w-xl animate-rise break-words font-display text-4xl font-extrabold leading-[1.15] text-ink sm:text-5xl md:mx-0 md:text-5xl md:leading-[1.1]">
               {t(ui.hero.titleStart)} <span className="text-accent-500">{t(ui.hero.titleHighlight)}</span>
             </h1>
-            <p className="mx-auto mt-6 max-w-lg text-body md:mx-0">{t(ui.hero.body)}</p>
-            <div className="mt-8 flex flex-wrap justify-center gap-4 md:justify-start">
+            <p style={{ animationDelay: '180ms' }} className="mx-auto mt-6 max-w-lg animate-rise text-body md:mx-0">
+              {t(ui.hero.body)}
+            </p>
+            <div
+              style={{ animationDelay: '270ms' }}
+              className="mt-8 flex animate-rise flex-wrap justify-center gap-4 md:justify-start"
+            >
               <Link
                 to="/#work"
-                className="rounded-2xl bg-accent-400 px-6 py-3 font-semibold text-white transition-colors hover:bg-accent-600"
+                className="rounded-2xl bg-accent-400 px-6 py-3 font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:bg-accent-600 hover:shadow-md active:translate-y-0 active:scale-[0.98]"
               >
                 {t(ui.hero.viewWork)}
               </Link>
               <Link
                 to="/#about"
-                className="rounded-2xl border border-ink/20 px-6 py-3 font-semibold text-ink transition-colors hover:border-ink/40"
+                className="rounded-2xl border border-ink/20 px-6 py-3 font-semibold text-ink transition duration-200 hover:-translate-y-0.5 hover:border-ink/40 active:translate-y-0 active:scale-[0.98]"
               >
                 {t(ui.hero.aboutMe)}
               </Link>
             </div>
 
-            <div className="mt-10 inline-flex flex-wrap items-center justify-center gap-3 rounded-full bg-accent-100 px-6 py-3 text-sm font-medium text-accent-600 md:justify-start">
+            <div
+              style={{ animationDelay: '360ms' }}
+              className="mt-10 inline-flex animate-rise flex-wrap items-center justify-center gap-3 rounded-full bg-accent-100 px-6 py-3 text-sm font-medium text-accent-600 md:justify-start">
               <span>
                 {projects.length}+ {t(ui.hero.statsProjects)}
               </span>
@@ -175,15 +184,15 @@ export default function Home() {
           </div>
 
           {/* Portrait — hidden on mobile, shown from md up */}
-          <div className="hidden md:order-2 md:block">
+          <div style={{ animationDelay: '200ms' }} className="hidden animate-rise md:order-2 md:block">
             <div className="relative mx-auto w-56 sm:w-64 md:w-full md:max-w-sm">
               <div
                 aria-hidden="true"
-                className="absolute -right-5 -top-5 -z-10 h-full w-full rounded-[2.5rem] bg-accent-200"
+                className="absolute -right-5 -top-5 -z-10 h-full w-full animate-float rounded-[2.5rem] bg-accent-200"
               />
               <div
                 aria-hidden="true"
-                className="absolute -bottom-5 -left-5 -z-10 h-2/3 w-2/3 rounded-[2rem] bg-terracotta/25"
+                className="absolute -bottom-5 -left-5 -z-10 h-2/3 w-2/3 animate-float-alt rounded-[2rem] bg-terracotta/25"
               />
               <img
                 src={assetUrl('profile/fiorella.webp')}
@@ -197,7 +206,7 @@ export default function Home() {
 
       {/* Selected work */}
       <section id="work" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-16">
-        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div data-reveal className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <h2 className="text-4xl font-bold">
               {t(ui.work.heading)} <span className="text-accent-500">{t(ui.work.headingHighlight)}</span>
@@ -212,7 +221,7 @@ export default function Home() {
         <div className="mt-10 text-center">
           <Link
             to="/work"
-            className="inline-block rounded-full bg-accent-400 px-6 py-3 font-semibold text-white transition-colors hover:bg-accent-600"
+            className="inline-block rounded-full bg-accent-400 px-6 py-3 font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:bg-accent-600 hover:shadow-md active:translate-y-0 active:scale-[0.98]"
           >
             {t(ui.work.allProjects)}
           </Link>
@@ -221,16 +230,21 @@ export default function Home() {
 
       {/* Craft & Tools */}
       <section id="about" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-12">
-        <h2 className="text-4xl font-bold">
+        <h2 data-reveal className="text-4xl font-bold">
           {t(ui.craftTools.heading)} <span className="text-accent-500">{t(ui.craftTools.headingHighlight)}</span>
         </h2>
-        <p className="mt-3 max-w-md text-body">{t(ui.craftTools.subtitle)}</p>
+        <p data-reveal className="mt-3 max-w-md text-body">{t(ui.craftTools.subtitle)}</p>
 
         <div className="mt-10 grid gap-5 md:grid-cols-3">
-          {tools.map((group) => {
+          {tools.map((group, i) => {
             const Icon = group.icon
             return (
-              <div key={t(group.title)} className="rounded-2xl bg-paper p-6 shadow-sm">
+              <div
+                key={t(group.title)}
+                data-reveal
+                style={{ '--reveal-delay': `${i * 100}ms` } as CSSProperties}
+                className="rounded-2xl bg-paper p-6 shadow-sm transition duration-300 ease-out hover:-translate-y-1 hover:shadow-md"
+              >
                 <div className="flex items-start justify-between">
                   <h3 className="text-lg font-bold">{t(group.title)}</h3>
                   <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${group.iconBg}`}>
@@ -255,16 +269,21 @@ export default function Home() {
 
       {/* Professional Experience */}
       <section className="mx-auto max-w-6xl px-6 py-16">
-        <h2 className="text-4xl font-bold">
+        <h2 data-reveal className="text-4xl font-bold">
           {t(ui.experience.heading)} <span className="text-accent-500">{t(ui.experience.headingHighlight)}</span>
         </h2>
-        <p className="mt-3 max-w-md text-body">{t(ui.experience.subtitle)}</p>
+        <p data-reveal className="mt-3 max-w-md text-body">{t(ui.experience.subtitle)}</p>
 
         <div className="mt-10 grid gap-5 md:grid-cols-3">
-          {experience.map((entry) => {
+          {experience.map((entry, i) => {
             const Icon = entry.icon
             return (
-              <div key={t(entry.title)} className="rounded-2xl bg-paper p-6 shadow-sm">
+              <div
+                key={t(entry.title)}
+                data-reveal
+                style={{ '--reveal-delay': `${i * 100}ms` } as CSSProperties}
+                className="rounded-2xl bg-paper p-6 shadow-sm transition duration-300 ease-out hover:-translate-y-1 hover:shadow-md"
+              >
                 <div className="flex items-start justify-between">
                   <div>
                     <h3 className="text-lg font-bold">{t(entry.title)}</h3>
@@ -284,11 +303,11 @@ export default function Home() {
 
       {/* Connect */}
       <section id="contact" className="mx-auto max-w-3xl scroll-mt-24 px-6 py-16 text-center">
-        <h2 className="text-4xl font-bold">{t(ui.connect.heading)}</h2>
-        <p className="mx-auto mt-3 max-w-md text-body">{t(ui.connect.subtitle)}</p>
+        <h2 data-reveal className="text-4xl font-bold">{t(ui.connect.heading)}</h2>
+        <p data-reveal className="mx-auto mt-3 max-w-md text-body">{t(ui.connect.subtitle)}</p>
 
         <div className="mt-8 space-y-3 text-left">
-          {connectLinks.map((link) => {
+          {connectLinks.map((link, i) => {
             const Icon = link.icon
             const Trailing = link.trailing === 'send' ? Send : null
             return (
@@ -297,7 +316,9 @@ export default function Home() {
                 href={link.href}
                 target={link.href.startsWith('http') ? '_blank' : undefined}
                 rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
-                className="flex items-center justify-between rounded-2xl bg-paper px-5 py-4 shadow-sm transition-colors hover:bg-accent-100/60"
+                data-reveal
+                style={{ '--reveal-delay': `${i * 90}ms` } as CSSProperties}
+                className="group flex items-center justify-between rounded-2xl bg-paper px-5 py-4 shadow-sm transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-accent-100/60 hover:shadow-md"
               >
                 <span className="flex items-center gap-4">
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent-200 text-accent-600">
@@ -311,9 +332,12 @@ export default function Home() {
                   </span>
                 </span>
                 {Trailing ? (
-                  <Trailing size={18} className="shrink-0 text-ink" />
+                  <Trailing
+                    size={18}
+                    className="shrink-0 text-ink transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-1"
+                  />
                 ) : (
-                  <span aria-hidden="true" className="shrink-0 text-ink">
+                  <span aria-hidden="true" className="shrink-0 text-ink transition-transform duration-300 group-hover:translate-x-1">
                     →
                   </span>
                 )}
@@ -322,13 +346,13 @@ export default function Home() {
           })}
         </div>
 
-        <div className="mt-10 flex items-center justify-center gap-4 text-sm text-body/70">
+        <div data-reveal className="mt-10 flex items-center justify-center gap-4 text-sm text-body/70">
           <span className="h-px w-12 bg-ink/15" aria-hidden="true" />
           <span>{t(ui.connect.quote)}</span>
           <span className="h-px w-12 bg-ink/15" aria-hidden="true" />
         </div>
 
-        <div className="mt-8 rounded-2xl bg-accent-100 px-6 py-5 text-accent-600">
+        <div data-reveal className="mt-8 rounded-2xl bg-accent-100 px-6 py-5 text-accent-600">
           <MapPin size={20} className="mx-auto" />
           <p className="mt-2 font-semibold">
             {t(ui.connect.locationLabel)}

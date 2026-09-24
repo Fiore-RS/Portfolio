@@ -1,5 +1,8 @@
 export type ProjectCategory = 'Graphic Design' | 'UX/UI Design'
 
+/** Generated (SVG/CSS) covers for apps/websites — see components/AppCover.tsx. */
+export type AppCoverVariant = 'teleo' | 'sobres' | 'book-tracker'
+
 export interface Localized {
   en: string
   es: string
@@ -16,11 +19,14 @@ export interface Project {
   cardColor: string
   /** Optional real cover image — falls back to cardColor when absent. */
   image?: string
+  /** Generated cover for apps/websites (used when there is no `image`). */
+  cover?: AppCoverVariant
   timeline: Localized
   role: Localized
   tools: Localized
   overview: { en: string[]; es: string[] }
-  gallery: { color: string; image?: string; alt: Localized }[]
+  /** Optional — omitted for apps/websites, which rely on `liveUrl` instead of screenshots. */
+  gallery?: { color: string; image?: string; alt: Localized }[]
   summary: Localized
   /** Optional downloadable document (e.g. a brand manual PDF) shown as a button on the project page. */
   pdf?: { path: string; label: Localized }

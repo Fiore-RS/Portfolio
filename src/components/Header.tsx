@@ -27,7 +27,9 @@ export default function Header() {
               key={link.to}
               to={link.to}
               className={({ isActive }) =>
-                `transition-colors hover:text-accent-600 ${isActive ? 'text-accent-600' : ''}`
+                `relative transition-colors after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:origin-left after:rounded-full after:bg-accent-500 after:transition-transform after:duration-300 hover:text-accent-600 hover:after:scale-x-100 ${
+                  isActive ? 'text-accent-600 after:scale-x-100' : 'after:scale-x-0'
+                }`
               }
             >
               {link.label}

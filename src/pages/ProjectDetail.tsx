@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import type { CSSProperties } from 'react'
 import { Navigate, useParams, Link } from 'react-router-dom'
 import { FileDown, ExternalLink, AlertTriangle } from 'lucide-react'
 import { getProjectBySlug, projects } from '../data/projects'
 import { ui, useTranslations } from '../i18n/translations'
 import ImageLightbox from '../components/ImageLightbox'
+import AppCover from '../components/AppCover'
 import { assetUrl } from '../lib/assetUrl'
 
 export default function ProjectDetail() {
@@ -27,19 +29,21 @@ export default function ProjectDetail() {
         }`}
         onClick={() => project.image && setLightbox({ src: assetUrl(project.image)!, alt: t(project.title) })}
       >
-        {project.image && (
+        {project.image ? (
           <img src={assetUrl(project.image)} alt="" className="absolute inset-0 h-full w-full object-cover" />
+        ) : (
+          project.cover && <AppCover variant={project.cover} />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-black/0" />
         <div className="relative mx-auto w-full max-w-6xl px-6 py-14">
-          <p className="text-sm font-medium text-white/80">{t(project.type)}</p>
-          <h1 className="mt-2 font-display text-5xl font-extrabold text-white">{t(project.title)}</h1>
+          <p className="animate-rise text-sm font-medium text-white/80">{t(project.type)}</p>
+          <h1 style={{ animationDelay: '100ms' }} className="mt-2 animate-rise font-display text-5xl font-extrabold text-white">{t(project.title)}</h1>
         </div>
       </section>
 
       {/* Overview + details */}
       <section className="mx-auto grid max-w-6xl gap-10 px-6 pb-8 pt-16 md:grid-cols-[1fr_320px]">
-        <div>
+        <div data-reveal>
           <h2 className="text-3xl font-bold">
             {t(ui.projectDetail.overview)} <span className="text-accent-500">{t(ui.projectDetail.overviewHighlight)}</span>
           </h2>
@@ -50,7 +54,11 @@ export default function ProjectDetail() {
           </div>
         </div>
 
-        <aside className="h-fit rounded-2xl bg-paper p-6 shadow-sm">
+        <aside
+          data-reveal
+          style={{ '--reveal-delay': '120ms' } as CSSProperties}
+          className="h-fit rounded-2xl bg-paper p-6 shadow-sm"
+        >
           <h3 className="text-lg font-bold">{t(ui.projectDetail.details)}</h3>
           <dl className="mt-4 space-y-4 text-sm">
             <div>
@@ -100,34 +108,38 @@ export default function ProjectDetail() {
         </aside>
       </section>
 
-      {/* Gallery */}
-      <section className="mx-auto max-w-6xl px-6 pb-16 pt-8">
-        <h2 className="text-3xl font-bold">
-          {t(ui.projectDetail.closeLook)} <span className="text-accent-500">{t(ui.projectDetail.closeLookHighlight)}</span>
-        </h2>
-        <div className="mt-8 grid gap-5 sm:grid-cols-2">
-          {project.gallery.map((item, i) => (
-            <button
-              key={i}
-              type="button"
-              onClick={() => item.image && setLightbox({ src: assetUrl(item.image)!, alt: t(item.alt) })}
-              disabled={!item.image}
-              className={`aspect-[4/3] overflow-hidden rounded-3xl border-2 border-accent-500 ${item.color} ${
-                item.image ? 'cursor-zoom-in transition-transform hover:scale-[1.02]' : ''
-              }`}
-              aria-label={t(item.alt)}
-            >
-              {item.image && (
-                <img src={assetUrl(item.image)} alt={t(item.alt)} className="h-full w-full object-cover" />
-              )}
-            </button>
-          ))}
-        </div>
-      </section>
+      {/* Gallery — only for projects that have one (apps/websites use the live demo instead) */}
+      {project.gallery && project.gallery.length > 0 && (
+        <section className="mx-auto max-w-6xl px-6 pb-16 pt-8">
+          <h2 data-reveal className="text-3xl font-bold">
+            {t(ui.projectDetail.closeLook)} <span className="text-accent-500">{t(ui.projectDetail.closeLookHighlight)}</span>
+          </h2>
+          <div className="mt-8 grid gap-5 sm:grid-cols-2">
+            {project.gallery.map((item, i) => (
+              <button
+                key={i}
+                data-reveal
+                style={{ '--reveal-delay': `${(i % 2) * 100}ms` } as CSSProperties}
+                type="button"
+                onClick={() => item.image && setLightbox({ src: assetUrl(item.image)!, alt: t(item.alt) })}
+                disabled={!item.image}
+                className={`aspect-[4/3] overflow-hidden rounded-3xl border-2 border-accent-500 ${item.color} ${
+                  item.image ? 'cursor-zoom-in transition-transform hover:scale-[1.02]' : ''
+                }`}
+                aria-label={t(item.alt)}
+              >
+                {item.image && (
+                  <img src={assetUrl(item.image)} alt={t(item.alt)} className="h-full w-full object-cover" />
+                )}
+              </button>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Summary */}
       <section className="bg-accent-100">
-        <div className="mx-auto max-w-6xl px-6 py-16">
+        <div data-reveal className="mx-auto max-w-6xl px-6 py-16">
           <h2 className="text-3xl font-bold">
             {t(ui.projectDetail.summary)} <span className="text-accent-500">{t(ui.projectDetail.summaryHighlight)}</span>
           </h2>
@@ -138,7 +150,7 @@ export default function ProjectDetail() {
       <div className="py-16 text-center">
         <Link
           to={`/work/${nextProject.slug}`}
-          className="inline-block rounded-full bg-accent-400 px-6 py-3 font-semibold text-white transition-colors hover:bg-accent-600"
+          className="inline-block rounded-full bg-accent-400 px-6 py-3 font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:bg-accent-600 hover:shadow-md active:translate-y-0 active:scale-[0.98]"
         >
           {t(ui.projectDetail.nextProject)}
         </Link>

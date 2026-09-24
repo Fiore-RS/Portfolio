@@ -1,4 +1,5 @@
 import { Mail, Share2, Github, Clock, FileText } from 'lucide-react'
+import type { CSSProperties } from 'react'
 import { ui, useTranslations } from '../i18n/translations'
 import type { Localized } from '../data/types'
 
@@ -105,14 +106,16 @@ export default function Hire() {
 
   return (
     <section className="mx-auto max-w-6xl px-6 py-16 pt-[7.5rem]">
-      <h1 className="text-4xl font-bold">
+      <h1 className="animate-rise text-4xl font-bold">
         {t(ui.hire.heading)} <span className="text-accent-500">{t(ui.hire.headingHighlight)}</span>
       </h1>
-      <p className="mt-4 max-w-xl text-body">{t(ui.hire.intro)}</p>
+      <p style={{ animationDelay: '100ms' }} className="mt-4 max-w-xl animate-rise text-body">
+        {t(ui.hire.intro)}
+      </p>
 
       {/* Contact + availability */}
       <div className="mt-10 grid gap-5 md:grid-cols-2">
-        <div className="rounded-2xl bg-paper p-6 shadow-sm">
+        <div data-reveal className="rounded-2xl bg-paper p-6 shadow-sm">
           <h2 className="text-lg font-bold">{t(ui.hire.contact)}</h2>
           <div className="mt-4 space-y-3 text-sm">
             <a
@@ -143,7 +146,7 @@ export default function Hire() {
           </div>
         </div>
 
-        <div className="rounded-2xl bg-paper p-6 shadow-sm">
+        <div data-reveal style={{ '--reveal-delay': '100ms' } as CSSProperties} className="rounded-2xl bg-paper p-6 shadow-sm">
           <h2 className="text-lg font-bold">{t(ui.hire.availability)}</h2>
           <div className="mt-4 flex items-start gap-3 text-sm text-body">
             <Clock size={18} className="mt-0.5 shrink-0 text-accent-500" />
@@ -157,15 +160,20 @@ export default function Hire() {
 
       {/* Pricing */}
       <div className="mt-16">
-        <h2 className="text-4xl font-bold">
+        <h2 data-reveal className="text-4xl font-bold">
           {t(ui.hire.pricingHeading)} <span className="text-accent-500">{t(ui.hire.pricingHeadingHighlight)}</span>
         </h2>
         <p className="mt-2 max-w-xl text-sm text-body">{t(ui.hire.pricingSubtitle)}</p>
 
         <h3 className="mt-8 text-2xl font-bold text-ink">{t(ui.hire.webPackagesHeading)}</h3>
         <div className="mt-4 grid gap-5 md:grid-cols-3">
-          {webPackages.map((pkg) => (
-            <div key={t(pkg.name)} className="rounded-2xl bg-paper p-6 shadow-sm">
+          {webPackages.map((pkg, i) => (
+            <div
+              key={t(pkg.name)}
+              data-reveal
+              style={{ '--reveal-delay': `${i * 100}ms` } as CSSProperties}
+              className="rounded-2xl bg-paper p-6 shadow-sm transition duration-300 ease-out hover:-translate-y-1 hover:shadow-md"
+            >
               <h4 className="text-lg font-bold">{t(pkg.name)}</h4>
               <p className="mt-1 text-2xl font-extrabold text-accent-500">{t(ui.hire.priceFrom)} {pkg.price}</p>
               <p className="mt-3 text-sm text-body">{t(pkg.description)}</p>
@@ -175,8 +183,13 @@ export default function Hire() {
 
         <h3 className="mt-10 text-2xl font-bold text-ink">{t(ui.hire.graphicPackagesHeading)}</h3>
         <div className="mt-4 grid gap-5 md:grid-cols-3">
-          {graphicPackages.map((pkg) => (
-            <div key={t(pkg.name)} className="rounded-2xl bg-paper p-6 shadow-sm">
+          {graphicPackages.map((pkg, i) => (
+            <div
+              key={t(pkg.name)}
+              data-reveal
+              style={{ '--reveal-delay': `${i * 100}ms` } as CSSProperties}
+              className="rounded-2xl bg-paper p-6 shadow-sm transition duration-300 ease-out hover:-translate-y-1 hover:shadow-md"
+            >
               <h4 className="text-lg font-bold">{t(pkg.name)}</h4>
               <p className="mt-1 text-2xl font-extrabold text-accent-500">{t(ui.hire.priceFrom)} {pkg.price}</p>
               <p className="mt-3 text-sm text-body">{t(pkg.description)}</p>
@@ -189,14 +202,19 @@ export default function Hire() {
 
       {/* Terms of Service */}
       <div className="mt-16">
-        <h2 className="text-4xl font-bold">
+        <h2 data-reveal className="text-4xl font-bold">
           {t(ui.hire.termsHeading)} <span className="text-accent-500">{t(ui.hire.termsHeadingHighlight)}</span>
         </h2>
         <p className="mt-2 max-w-xl text-sm text-body">{t(ui.hire.termsSubtitle)}</p>
 
         <div className="mt-6 space-y-3">
-          {terms.map((term) => (
-            <div key={t(term.title)} className="flex gap-4 rounded-2xl bg-paper p-5 shadow-sm">
+          {terms.map((term, i) => (
+            <div
+              key={t(term.title)}
+              data-reveal
+              style={{ '--reveal-delay': `${Math.min(i, 3) * 70}ms` } as CSSProperties}
+              className="flex gap-4 rounded-2xl bg-paper p-5 shadow-sm"
+            >
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent-200 text-accent-600">
                 <FileText size={18} />
               </span>

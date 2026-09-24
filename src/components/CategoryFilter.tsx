@@ -22,7 +22,7 @@ export default function CategoryFilter({ categories, active, onChange }: Categor
             type="button"
             onClick={() => onChange(option)}
             aria-pressed={isActive}
-            className={`rounded-full border px-5 py-2 text-sm font-semibold transition-colors ${
+            className={`rounded-full border px-5 py-2 text-sm font-semibold transition active:scale-95 ${
               isActive
                 ? 'border-accent-500 bg-accent-500 text-white'
                 : 'border-accent-300 bg-transparent text-accent-600 hover:bg-accent-100'

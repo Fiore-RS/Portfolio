@@ -32,6 +32,33 @@ export default {
       borderRadius: {
         xl2: '1.75rem',
       },
+      keyframes: {
+        // Entrance: soft fade + rise (hero, carousel cards, page titles)
+        rise: {
+          from: { opacity: '0', translate: '0 18px' },
+          to: { opacity: '1', translate: 'none' },
+        },
+        // Route change: quick, quiet fade so pages don't "snap" in
+        'page-in': {
+          from: { opacity: '0' },
+          to: { opacity: '1' },
+        },
+        // Decorative shapes behind the portrait breathe very gently
+        float: {
+          '0%, 100%': { transform: 'translate(0, 0)' },
+          '50%': { transform: 'translate(4px, -8px)' },
+        },
+        'float-alt': {
+          '0%, 100%': { transform: 'translate(0, 0)' },
+          '50%': { transform: 'translate(-6px, 6px)' },
+        },
+      },
+      animation: {
+        rise: 'rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both',
+        'page-in': 'page-in 0.45s ease-out both',
+        float: 'float 9s ease-in-out infinite',
+        'float-alt': 'float-alt 11s ease-in-out infinite',
+      },
     },
   },
   plugins: [],
